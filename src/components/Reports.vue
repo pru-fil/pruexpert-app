@@ -60,6 +60,7 @@ export default {
     onMounted(() => {
       const requestOptions = {
         method: 'GET',
+        mode: 'no-cors',
         headers: authHeader()
       };
 
