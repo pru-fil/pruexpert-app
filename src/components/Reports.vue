@@ -21,7 +21,8 @@ import usersData from "../assets/dummy/users.json"
 import coursesData from "../assets/dummy/customCourse.json"
 
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
-import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
+import "ag-grid-community/styles/ag-theme-alpine.css";
+import {authHeader} from "../_helpers"; // Optional theme CSS
 export default {
   name: "Reports",
   components: {
@@ -57,8 +58,13 @@ export default {
 
     // Example load data from sever
     onMounted(() => {
+      const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+      };
+
       let courses;
-      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`)
+      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`, requestOptions)
       .then(resp => resp.json())
       .then((d) => {
         courses = d;
