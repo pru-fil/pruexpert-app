@@ -1,0 +1,35 @@
+[
+  {
+    "Id": "I71eQCL4hxc1",
+    "UserName": "Yixuan",
+    "FirstName": "Tay",
+    "LastName": "Yixuan",
+    "Completed": false,
+    "PercentageComplete": 0.00,
+    "CompliantTill": null,
+    "DueDate": null,
+    "AccessTillDate": null
+  },
+  {
+    "Id": "ueKeYIhEbes1",
+    "UserName": "Marina.Lim@prudential.com.sg",
+    "FirstName": "Marina",
+    "LastName": "Lim",
+    "Completed": false,
+    "PercentageComplete": 67.00,
+    "CompliantTill": null,
+    "DueDate": null,
+    "AccessTillDate": null
+  },
+  {
+    "Id": "jXXMajzFFCA1",
+    "UserName": "grace.lim@prudential.com.sg",
+    "FirstName": "Grace",
+    "LastName": "Lim",
+    "Completed": false,
+    "PercentageComplete": 0.00,
+    "CompliantTill": null,
+    "DueDate": null,
+    "AccessTillDate": null
+  }
+]

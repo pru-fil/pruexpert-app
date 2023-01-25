@@ -1,0 +1,40 @@
+@import './base.css';
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+#app {
+  width: inherit;
+  height: inherit;
+}
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    background-color: #eee;
+  }
+
+  #app {
+    /*display: grid;*/
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 5rem;
+    margin-left: 290px;
+  }
+}
