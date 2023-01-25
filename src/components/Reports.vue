@@ -68,6 +68,7 @@ export default {
       fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`, {
         method: 'GET',
         mode: 'no-cors',
+        credentials: 'include',
         headers: {
           apikey: 'c27692cc-02df-4dc4-ae8c-3a52e25bc860'
         }
