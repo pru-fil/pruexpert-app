@@ -57,7 +57,14 @@ export default {
 
     // Example load data from sever
     onMounted(() => {
+      let courses;
+      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`)
+      .then(resp => resp.json())
+      .then((d) => {
+        courses = d;
+      })
 
+      console.log(courses);
       coursesData.forEach(course => {
         console.log(course)
         fetch(`http://127.0.0.1:8000/public/dummy/course_user_${course.Id}.json`)
