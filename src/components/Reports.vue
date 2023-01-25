@@ -65,7 +65,11 @@ export default {
       };
 
       let courses;
-      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`, requestOptions)
+      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`, {
+        method: 'GET',
+        mode: 'no-cors',
+        headers: authHeader()
+      })
       .then(resp => resp.json())
       .then((d) => {
         courses = d;
