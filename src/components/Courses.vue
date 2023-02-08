@@ -8,79 +8,68 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-4">
-          <div class="card mb-4">
-            <div class="card-body text-center">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                   class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">{{ user.data.FirstName }} {{ user.data.LastName }}</h5>
-              <p class="text-muted mb-1">{{ user.data.AccessLevel }}</p>
-<!--              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>-->
-              <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Follow</button>
-                <button type="button" class="btn btn-outline-primary ms-1">Message</button>
-              </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Course Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0 fs-5 fw-bold">{{ course.data.Name }}</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">First Name</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ user.data.FirstName }}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Last Name</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ user.data.LastName }}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Email</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ user.data.Email }}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Access Level</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ user.data.AccessLevel }}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Active</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{ user.data.Active }}</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Lorem Ipsum</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">Lorem Ipsum</p>
-                </div>
-              </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Description</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{ course.data.Description }}</p>
             </div>
           </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p class="mb-0">Assigned People</p>
+                </div>
+                <div class="col-sm-8">
+                  <p class="text-muted mb-0">{{ course.data.assignedPeople }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p class="mb-0">People Completed</p>
+                </div>
+                <div class="col-sm-8">
+                  <p class="text-muted mb-0">{{ course.data.peopleCompleted }}</p>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="col-sm-8">
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Completed Percent</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ course.data.completedPercent }}</p>
+                </div>
+              </div><hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Average Time Completed</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ course.data.averageTime }}</p>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="row">
@@ -131,6 +120,16 @@ export default {
         Email: null,
       }
     });
+    const course = reactive( {
+      data: {
+        Name: null,
+        Description: null,
+        assignedPeople: null,
+        peopleCompleted: null,
+        completedPercent: null,
+        averageTime: null,
+      }
+    });
     const gridApi = ref(null); // Optional - for accessing Grid's API
 
     // Obtain API from grid's onGridReady event
@@ -143,10 +142,11 @@ export default {
     // Each Column Definition results in one Column.
     const columnDefs = reactive({
       value: [
-        { headerName: "course name", field: "Name"},
-        { headerName: "completed", field: "Complete" },
+        { headerName: "First Name", field: "FirstName"},
+        { headerName: "Last Name", field: "LastName"},
+        { headerName: "completed", field: "Completed" },
         { headerName: "percentage complete", field: "PercentageComplete" },
-        { headerName: "active", field: "Active" }
+        { headerName: "Duration", field: "duration" }
       ],
     });
 
@@ -158,17 +158,37 @@ export default {
     };
     onMounted(() => {
       // console.log(route.params.id);
-      user.data = usersData.find((obj) => {
-        return obj.Id === route.params.id
+      let courses = JSON.parse(localStorage.getItem('courses'));
+      courses.forEach(c => {
+        if (c.Id == route.params.id) {
+          course.data = c;
+        }
       })
-      console.log(user.data.FirstName);
-      fetch(`http://127.0.0.1:8000/public/dummy/${route.params.id}.json`)
-          .then((resp) => resp.json())
-          .then((d) => rowData.value = d);
+      // fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id, {
+      fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id, {
+        method: 'GET'
+      })
+          .then(resp => resp.json())
+          .then((d) => {
+            console.log(d);
+            course.data.averageTime = d.averageTime;
+            course.data.assignedPeople = d.assignedPeople;
+            rowData.value = d.users;
+          })
+
+
+      // user.data = usersData.find((obj) => {
+      //   return obj.Id === route.params.id
+      // })
+      // console.log(user.data.FirstName);
+      // fetch(`http://127.0.0.1:8000/public/dummy/${route.params.id}.json`)
+      //     .then((resp) => resp.json())
+      //     .then((d) => rowData.value = d);
     });
     return {
       user,
       onGridReady,
+      course,
       columnDefs,
       rowData,
       defaultColDef,

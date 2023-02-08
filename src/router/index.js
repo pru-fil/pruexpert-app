@@ -5,6 +5,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Courses from "../components/Courses.vue";
 import Login from "../components/layouts/Login.vue";
 import Sidebar from "../components/layouts/Sidebar.vue";
+import Trigger from "../components/Trigger.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +33,11 @@ const router = createRouter({
           // which is lazy-loaded when the route is visited.
           component: Courses
         },
+        {
+          path: 'trigger',
+          name: 'Trigger',
+          component: Trigger
+        }
       ]
     },
     {

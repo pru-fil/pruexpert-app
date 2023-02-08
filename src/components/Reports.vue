@@ -1,4 +1,47 @@
 <template>
+
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-9">
+        <div class="row">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center fw-bold fs-3">
+                [PAMB EN 1.0] Boosting Agent Productivity With PRULeads
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <p class="text-start fs-4">
+                Total People Assigned:
+              </p>
+            </div>
+            <div class="col-md-8">
+              <p class="text-left fw-bold fs-4">
+                17
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <p class="text-start fs-4">
+                People Completed %:
+              </p>
+            </div>
+            <div class="col-md-8">
+              <p class="text-left fw-bold fs-4">
+                {{number3}} %
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <Pie v-if="loaded.state" :data="chartData" />
+      </div>
+    </div>
+  </div>
   <ag-grid-vue
       class="ag-theme-alpine"
       style="height: 800px"
@@ -14,6 +57,11 @@
 </template>
 
 <script lang="ts">
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Pie } from 'vue-chartjs'
+
+ChartJS.register(ArcElement, Tooltip, Legend)
+
 import { AgGridVue } from "ag-grid-vue3";
 import { reactive, onMounted, ref } from "vue";
 import { useRouter, useRoute } from 'vue-router'
@@ -27,15 +75,28 @@ export default {
   name: "Reports",
   components: {
     AgGridVue,
+    Pie
   },
   setup() {
     const router = useRouter()
     const gridApi = ref(null); // Optional - for accessing Grid's API
 
+    const number1 = 2;
+    const number2 = 14;
+    const number3 = ((number1 / number2) * 100).toFixed(0)
+    const loaded = reactive({state: false});
     // Obtain API from grid's onGridReady event
     const onGridReady = (params) => {
       gridApi.value = params.api;
     };
+    const chartData = reactive({
+      labels: [ number1+' Completed', number2+' Not Completed'],
+      datasets: [{
+        labels: [ 'Completed', 'Not Completed'],
+        backgroundColor: ['#41B883', '#DD1B16'],
+        data: [number1, number2]
+      }]
+    });
 
     const rowData = reactive({}); // Set rowData to Array of Objects, one Object per Row
 
@@ -43,9 +104,8 @@ export default {
     const columnDefs = reactive({
       value: [
         { headerName: "Course Name", field: "Name"},
-        { headerName: "Total No of User Assigned", field: "userCount" },
-        { headerName: "Total No of User Completed", field: "completedCount" },
-        { headerName: "% Completed", field: "percentageComplete" }
+        { headerName: "Total No of User Completed", field: "peopleCompleted" },
+        { headerName: "% completed", field: "completedPercent" },
       ],
     });
 
@@ -58,51 +118,31 @@ export default {
 
     // Example load data from sever
     onMounted(() => {
-      const requestOptions = {
-        method: 'GET',
-        mode: 'cors',
-        headers: authHeader()
-      };
-
-      let courses;
-      fetch(`https://api.litmos.com.au/v1.svc/courses?source=map&format=json&start=1&limit=1000`, {
-        method: 'GET',
-        mode: 'no-cors',
-        credentials: 'include',
-        headers: {
-          'apikey' : 'c27692cc-02df-4dc4-ae8c-3a52e25bc860',
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(resp => resp.json())
-      .then((d) => {
-        courses = d;
-      })
-
-      console.log(courses);
-      coursesData.forEach(course => {
-        console.log(course)
-        fetch(`http://127.0.0.1:8000/public/dummy/course_user_${course.Id}.json`)
-            .then((resp) => resp.json())
+      loaded.state = true;
+      let coursesData;
+      if (localStorage.getItem('courses') === null) {
+        // fetch(`http://localhost:8081/api/getCourses`, {
+        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses`, {
+          method: 'GET'
+        })
+            .then(resp => resp.json())
             .then((d) => {
-              let completedCount = 0;
-              d.forEach(user => {
-                if(user.Completed) {
-                  completedCount++;
-                }
-              })
-              course.userCount =  Object.keys(d).length
-              course.completedCount = completedCount;
-              course.percentageComplete = (completedCount / course.userCount) * 100;
-            });
-      })
+              console.log(d);
+              localStorage.setItem('courses', JSON.stringify(d))
+              rowData.value = d;
+              loaded.state = true;
+            })
+      } else {
+        rowData.value = JSON.parse(localStorage.getItem('courses'))
+      }
 
-      console.log(coursesData);
-      rowData.value = coursesData;
     });
 
     return {
       onGridReady,
+      number3,
+      chartData,
+      loaded,
       columnDefs,
       rowData,
       defaultColDef,
