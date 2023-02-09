@@ -1,4 +1,9 @@
 <template>
+  <div>
+    <button @click="$router.back()">
+      Back
+    </button>
+  </div>
   <section>
     <div class="container py-5">
       <div class="row">
@@ -102,7 +107,8 @@ import usersData from "../assets/dummy/users.json"
 
 
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
-import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
+import "ag-grid-community/styles/ag-theme-alpine.css";
+import router from "../router"; // Optional theme CSS
 
 export default {
   name: "Courses",
@@ -156,6 +162,7 @@ export default {
       filter: true,
       flex: 1
     };
+
     onMounted(() => {
       // console.log(route.params.id);
       let courses = JSON.parse(localStorage.getItem('courses'));

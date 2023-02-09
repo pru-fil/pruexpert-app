@@ -12,7 +12,7 @@ export default {
           hiddenOnCollapse: true,
         },
         {
-          href: '/about',
+          href: '/',
           title: 'Reports',
           icon: 'fa fa-user'
         },
