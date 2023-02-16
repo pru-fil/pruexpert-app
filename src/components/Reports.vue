@@ -108,8 +108,8 @@ export default {
     const columnDefs = reactive({
       value: [
         { headerName: "Course Name", field: "Name"},
-        { headerName: "Total No of User Completed", field: "peopleCompleted" },
-        { headerName: "% completed", field: "completedPercent" },
+        { headerName: "User Completed", field: "peopleCompleted", maxWidth: 200  },
+        { headerName: "% completed", field: "completedPercent",maxWidth: 160  },
       ],
     });
 

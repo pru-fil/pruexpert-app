@@ -68,10 +68,10 @@ export default {
     // Each Column Definition results in one Column.
     const columnDefs = reactive({
       value: [
-        { headerName: "Course Name", field: "Name"},
-        { headerName: "Assigned User", field: "assignedPeople" },
-        { headerName: "Total No of User Completed", field: "peopleCompleted" },
-        { headerName: "% completed", field: "completedPercent" },
+        { headerName: "Learning Path Name", field: "Name", sizeColumnsToFit: true},
+        { headerName: "Assigned User", field: "assignedPeople", maxWidth: 180},
+        { headerName: "User Completed", field: "peopleCompleted", maxWidth: 200 },
+        { headerName: "% completed", field: "completedPercent", maxWidth: 160 },
       ],
     });
 
