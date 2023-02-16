@@ -1,5 +1,8 @@
 <template>
-
+  <div>
+    <button @click="$router.back()">
+      Back
+    </button>
   <div class="container">
     <div class="row align-items-center">
       <div class="col-9">
@@ -7,7 +10,7 @@
           <div class="row">
             <div class="col-12">
               <p class="text-center fw-bold fs-3">
-                [PAMB EN 1.0] Boosting Agent Productivity With PRULeads
+                {{ learningPath.name }}
               </p>
             </div>
           </div>
@@ -19,7 +22,7 @@
             </div>
             <div class="col-md-8">
               <p class="text-left fw-bold fs-4">
-                17
+                {{learningPath.ap}}
               </p>
             </div>
           </div>
@@ -31,7 +34,7 @@
             </div>
             <div class="col-md-8">
               <p class="text-left fw-bold fs-4">
-                {{number3}} %
+                {{learningPath.pcp}} %
               </p>
             </div>
           </div>
@@ -54,49 +57,50 @@
       @cell-clicked="cellWasClicked"
       @grid-ready="onGridReady"
   > </ag-grid-vue>
+  </div>
 </template>
 
 <script lang="ts">
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Pie } from 'vue-chartjs'
-
-ChartJS.register(ArcElement, Tooltip, Legend)
-
 import { AgGridVue } from "ag-grid-vue3";
-import { reactive, onMounted, ref } from "vue";
+import { reactive, onMounted, ref, computed } from "vue";
 import { useRouter, useRoute } from 'vue-router'
-import usersData from "../assets/dummy/users.json"
-import coursesData from "../assets/dummy/customCourse.json"
-
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import {authHeader} from "../_helpers"; // Optional theme CSS
+
+ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
   name: "Reports",
+  props: {
+    id: String,
+    name: String,
+    assignedPeople: Number,
+    peopleCompleted: Number
+  },
   components: {
     AgGridVue,
     Pie
   },
-  setup() {
+  setup(props) {
+    const route = useRoute()
     const router = useRouter()
     const gridApi = ref(null); // Optional - for accessing Grid's API
 
-    const number1 = 2;
-    const number2 = 14;
-    const number3 = ((number1 / number2) * 100).toFixed(0)
+    const learningPath = reactive({
+      id: '',
+      name: '',
+      cp: 0,
+      ap: 0,
+      pcp: 0,
+    });
+
     const loaded = reactive({state: false});
     // Obtain API from grid's onGridReady event
     const onGridReady = (params) => {
       gridApi.value = params.api;
     };
-    const chartData = reactive({
-      labels: [ number1+' Completed', number2+' Not Completed'],
-      datasets: [{
-        labels: [ 'Completed', 'Not Completed'],
-        backgroundColor: ['#41B883', '#DD1B16'],
-        data: [number1, number2]
-      }]
-    });
+    const chartData = reactive({});
 
     const rowData = reactive({}); // Set rowData to Array of Objects, one Object per Row
 
@@ -118,11 +122,28 @@ export default {
 
     // Example load data from sever
     onMounted(() => {
+      learningPath.name =route.params.name;
+      learningPath.id =route.params.id;
+      learningPath.ap = parseInt(route.params.ap);
+      learningPath.cp = parseInt(route.params.cp);
+      if (learningPath.ap != 0) {
+        learningPath.pcp = ((route.params.cp / route.params.ap) * 100).toFixed(0);
+      } else {
+        learningPath.pcp = 0;
+      }
+
+      console.log(learningPath.pcp)
+      chartData.labels = [ learningPath.cp+' Completed', learningPath.ap+' Not Completed']
+      chartData.datasets = [{
+          labels: [ 'Completed', 'Not Completed'],
+          backgroundColor: ['#41B883', '#DD1B16'],
+          data: [learningPath.cp, learningPath.ap]
+        }];
       loaded.state = true;
       let coursesData;
-      if (localStorage.getItem('courses') === null) {
-        // fetch(`http://localhost:8081/api/getCourses`, {
-        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses`, {
+      if (localStorage.getItem(learningPath.id) === null) {
+        fetch(`http://localhost:8001/api/getCourses/`+learningPath.id, {
+        // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses/`+learningPath.id, {
           method: 'GET'
         })
             .then(resp => resp.json())
@@ -133,14 +154,14 @@ export default {
               loaded.state = true;
             })
       } else {
-        rowData.value = JSON.parse(localStorage.getItem('courses'))
+        rowData.value = JSON.parse(localStorage.getItem(learningPath.id))
       }
 
     });
 
     return {
       onGridReady,
-      number3,
+      learningPath,
       chartData,
       loaded,
       columnDefs,
