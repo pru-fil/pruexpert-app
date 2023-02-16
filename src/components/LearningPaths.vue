@@ -87,8 +87,8 @@ export default {
       loaded.state = true;
       let coursesData;
       if (localStorage.getItem('learningPaths') === null) {
-        fetch(`http://localhost:8001/api/learningPaths`, {
-        // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses`, {
+        // fetch(`http://localhost:8001/api/learningPaths`, {
+        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/learningPaths`, {
           method: 'GET'
         })
             .then(resp => resp.json())
