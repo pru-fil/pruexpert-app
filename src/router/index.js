@@ -8,6 +8,7 @@ import Sidebar from "../components/layouts/Sidebar.vue";
 import Trigger from "../components/Trigger.vue";
 import LearningPaths from "../components/LearningPaths.vue";
 import Reports from "../components/Reports.vue";
+import Lbus from "../components/Lbus.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,6 +18,11 @@ const router = createRouter({
       children: [
         {
           path: '/',
+          name: 'lbus',
+          component: Lbus
+        },
+        {
+          path: '/lp',
           name: 'learningPaths',
           component: LearningPaths
         },
@@ -33,11 +39,6 @@ const router = createRouter({
           // this generates a separate chunk (About.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
           component: Courses
-        },
-        {
-          path: 'trigger',
-          name: 'Trigger',
-          component: Trigger
         }
       ]
     },
@@ -46,7 +47,11 @@ const router = createRouter({
       name: "login",
       component: Login,
     },
-
+    {
+      path: '/trigger',
+      name: 'Trigger',
+      component: Trigger
+    }
   ]
 })
 

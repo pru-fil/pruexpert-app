@@ -1,11 +1,16 @@
 <template>
   <div>
+    <div class="position-absolute top-0 end-0 align-items-center">
+      Last Synced:
+      {{lastSynced}}
+      <button class="btn btn-warning" @click="resync"> Sync</button>
+    </div>
     <button @click="$router.back()">
       Back
     </button>
   </div>
   <section>
-    <div class="container py-5">s
+    <div class="container py-5">
       <div class="row">
         <div class="col">
 
@@ -108,7 +113,8 @@ import usersData from "../assets/dummy/users.json"
 
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import router from "../router"; // Optional theme CSS
+import router from "../router";
+import {store} from "../store/store.js"; // Optional theme CSS
 
 export default {
   name: "Courses",
@@ -136,6 +142,7 @@ export default {
         averageTime: null,
       }
     });
+    const lastSynced = ref(null);
     const gridApi = ref(null); // Optional - for accessing Grid's API
 
     // Obtain API from grid's onGridReady event
@@ -163,38 +170,43 @@ export default {
       flex: 1
     };
 
-    onMounted(() => {
-      // console.log(route.params.id);
+    const resync = () => {
+
+    }
+
+    const mounted = () => {
       let courses = JSON.parse(localStorage.getItem('courses'));
       courses.forEach(c => {
         if (c.Id == route.params.id) {
           course.data = c;
         }
       })
-      // fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id, {
-      fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id, {
+      fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+        lbu: store.lbu
+      }), {
+        // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+        //   lbu: store.lbu
+        // }), {
         method: 'GET'
       })
           .then(resp => resp.json())
           .then((d) => {
-            console.log(d);
             course.data.averageTime = d.averageTime;
             course.data.assignedPeople = d.assignedPeople;
             rowData.value = d.users;
           })
 
+    }
 
-      // user.data = usersData.find((obj) => {
-      //   return obj.Id === route.params.id
-      // })
-      // console.log(user.data.FirstName);
-      // fetch(`http://127.0.0.1:8000/public/dummy/${route.params.id}.json`)
-      //     .then((resp) => resp.json())
-      //     .then((d) => rowData.value = d);
+    onMounted(() => {
+      // console.log(route.params.id);
+     mounted();
+
     });
     return {
       user,
       onGridReady,
+      lastSynced,
       course,
       columnDefs,
       rowData,

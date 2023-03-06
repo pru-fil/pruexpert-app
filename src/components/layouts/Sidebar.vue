@@ -1,6 +1,8 @@
 <template>
-  <sidebar-menu :menu="menu" hide-toggle="hideToggle"/>
-  <RouterView />
+  <div id="main-content">
+    <sidebar-menu :menu="menu" hide-toggle="hideToggle"/>
+    <RouterView />
+  </div>
 </template>
 <script>
 export default {
