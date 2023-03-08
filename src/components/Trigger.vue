@@ -103,7 +103,7 @@ export default {
       }).then((resp) => {
         let data = resp.data;
         console.log(data.code);
-        if (data.code == 500) {
+        if (data.code == 500 || data.code == 404) {
           hasError.value = true;
           errorMsg.value = data.msg;
         } else if (data.code == 200) {
@@ -112,6 +112,7 @@ export default {
           hasError.value = true;
           errorMsg.value = "Unknown Error Occurred";
         }
+
         console.log(resp.data);
       })
     }
