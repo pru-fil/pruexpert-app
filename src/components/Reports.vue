@@ -162,12 +162,12 @@ export default {
       loaded.state = true;
       let coursesData;
       if (localStorage.getItem(learningPath.id) === null) {
-        fetch(`http://localhost:8001/api/getCourses/`+learningPath.id + '?' + new URLSearchParams({
-          lbu: store.lbu
-        }), {
-          // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses/`+learningPath.id + '?' + new URLSearchParams({
-          //  lbu: store.lbu
-          //}), {
+        // fetch(`http://localhost:8001/api/getCourses/`+learningPath.id + '?' + new URLSearchParams({
+        //   lbu: store.lbu
+        // }), {
+          fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourses/`+learningPath.id + '?' + new URLSearchParams({
+           lbu: store.lbu
+          }), {
           method: 'GET'
         })
             .then(resp => resp.json())

@@ -15,14 +15,10 @@
                     <div class="form-group mb-4">
                       <label for="form2Example17">Username</label>
                       <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />
-
                     </div>
-
-<!--                    <div class="form-outline mb-4">-->
-<!--                      <input type="password" id="form2Example27" v-model="password" class="form-control form-control-lg" />-->
-<!--                      <label class="form-label" for="form2Example27">Password</label>-->
-<!--                    </div>-->
-
+                    <div v-if="hasError" class="alert alert-danger alert-dismissible fade show">
+                      <strong>Error!</strong> {{ errorMsg }}
+                    </div>
                     <div class="pt-1 mb-4">
                       <button class="btn btn-dark btn-lg btn-block" @click.prevent="handleSubmit" type="button">Check</button>
                     </div>
@@ -30,7 +26,9 @@
                   </form>
 
                   <div v-if="hideForm">
-                    Account has a valid license, modules unlocked.
+                    <div class="alert alert-success alert-dismissible fade show">
+                      <strong>Success!</strong> Module Completed! Proceed to next module.
+                    </div>
                   </div>
 
                 </div>
@@ -41,16 +39,6 @@
       </div>
     </div>
   </section>
-
-
-<!--      <div class="card" style="width: 18rem;">-->
-<!--        <img class="card-img-top" src="#" alt="Card image cap">-->
-<!--        <div class="card-body">-->
-<!--          <h5 class="card-title">Card title</h5>-->
-<!--          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--          <button class="btn btn-primary" @click.prevent="completeModule">Go somewhere</button>-->
-<!--        </div>-->
-<!--      </div>-->
 
 </template>
 
@@ -70,6 +58,8 @@ export default {
     let hideForm = ref(false);
     let username = ref('');
     let password = ref('');
+    const hasError = ref(false);
+    const errorMsg = ref('');
     const stepCount = 0;
     const currentStep = 1;
     const stepValue = {
@@ -95,18 +85,34 @@ export default {
 
     const handleSubmit = () => {
       // hideForm.value = true;
-      console.log(password, username);
+      if (username.value == '') {
+        hasError.value = true;
+        errorMsg.value = "Please input username";
+        return;
+      }
       axios({
         method: 'post',
-        url: 'http://localhost:8001/api/completeModule',
+        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
         data: {
           username: username.value,
           password: password.value,
           title: router.query.title,
-          moduleId: router.query.moduleId
+          moduleId: router.query.moduleId,
+          type: router.query.type,
         }
       }).then((resp) => {
-        console.log(resp);
+        let data = resp.data;
+        console.log(data.code);
+        if (data.code == 500) {
+          hasError.value = true;
+          errorMsg.value = data.msg;
+        } else if (data.code == 200) {
+          hideForm.value = true;
+        } else {
+          hasError.value = true;
+          errorMsg.value = "Unknown Error Occurred";
+        }
+        console.log(resp.data);
       })
     }
 
@@ -118,61 +124,15 @@ export default {
       }
     }
 
-    function completeModule() {
-      if (router.query.title) {
-        axios({
-          method: 'post',
-          url: 'http://localhost:8001/api/completeModule',
-          data: {
-            id: user.id,
-            title: router.query.title,
-            moduleId: router.query.moduleId
-          }
-        }).then((resp) => {
-          console.log(resp);
-        })
-      } else {
-        console.log("wala")
-      }
-
-    }
-
-    const lastStep = () => {
-
-    }
-
     onMounted(() => {
-
-      let userId;
-      // axios({
-      //   method: 'post',
-      //   url: 'http://localhost:8001/api/getUser',
-      //   data: {
-      //     username: 'fil.sandalo@peoplebank.asia',
-      //   }
-      // }).then((resp) => {
-      //   user.id = resp.data.Id;
-      // })
-      // let coursesData;
-      // if (localStorage.getItem('courses') === null) {
-      //   fetch(`http://localhost:8000/api/getCourses`, {
-      //     method: 'GET'
-      //   })
-      //       .then(resp => resp.json())
-      //       .then((d) => {
-      //         console.log(d);
-      //         localStorage.setItem('courses', JSON.stringify(d))
-      //         rowData.value = d;
-      //       })
-      // } else {
-      //   rowData.value = JSON.parse(localStorage.getItem('courses'))
-      // }
 
     });
 
 
     return {
       hideForm,
+      hasError,
+      errorMsg,
       username,
       password,
       steps,
@@ -180,7 +140,6 @@ export default {
       stepCount,
       currentStep,
       indicatorClass,
-      completeModule,
       handleSubmit
     }
 

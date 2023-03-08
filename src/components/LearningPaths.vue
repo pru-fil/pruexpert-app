@@ -87,13 +87,14 @@ export default {
 
     const mounted = () => {
       lbu.value = store.lbu == 'sg' ? 'Pruexpert' : 'PAMB';
-      console.log(store.lbu);
       let coursesData;
       if (localStorage.getItem(lbu.value) === null) {
-        fetch(`http://localhost:8001/api/learningPaths?` + new URLSearchParams({
+        // fetch(`http://localhost:8001/api/learningPaths?` + new URLSearchParams({
+        //   lbu: store.lbu
+        // }), {
+          fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/learningPaths?` + new URLSearchParams({
           lbu: store.lbu
         }), {
-          // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/learningPaths`, {
           method: 'GET'
         })
             .then(resp => resp.json())

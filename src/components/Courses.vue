@@ -181,12 +181,12 @@ export default {
           course.data = c;
         }
       })
-      fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
-        lbu: store.lbu
-      }), {
-        // fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
-        //   lbu: store.lbu
-        // }), {
+      // fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+      //   lbu: store.lbu
+      // }), {
+        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+          lbu: store.lbu
+        }), {
         method: 'GET'
       })
           .then(resp => resp.json())
