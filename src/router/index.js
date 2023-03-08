@@ -14,41 +14,6 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: Sidebar,
-      children: [
-        {
-          path: '/',
-          name: 'lbus',
-          component: Lbus
-        },
-        {
-          path: '/lp',
-          name: 'learningPaths',
-          component: LearningPaths
-        },
-        {
-          path: '/courses/:id/:name/:ap/:cp',
-          name: 'reports',
-          component: Reports,
-          props: true
-        },
-        {
-          path: '/users/course/:lpid/:id',
-          name: 'courses',
-          // route level code-splitting
-          // this generates a separate chunk (About.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: Courses
-        }
-      ]
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: Login,
-    },
-    {
-      path: '/trigger',
       name: 'Trigger',
       component: Trigger
     }
