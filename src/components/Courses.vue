@@ -2,7 +2,7 @@
   <div>
     <div class="position-absolute top-0 end-0 align-items-center">
       Last Synced:
-      {{lastSynced}}
+      {{ lastSynced }}
       <button class="btn btn-warning" @click="resync"> Sync</button>
     </div>
     <button @click="$router.back()">
@@ -67,7 +67,8 @@
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{ course.data.completedPercent }}</p>
                 </div>
-              </div><hr>
+              </div>
+              <hr>
               <div class="row">
                 <div class="col-sm-3">
                   <p class="mb-0">Average Time Completed</p>
@@ -96,7 +97,7 @@
                 @row-clicked="rowClicked"
                 @cell-clicked="cellWasClicked"
                 @grid-ready="onGridReady"
-            > </ag-grid-vue>
+            ></ag-grid-vue>
           </div>
         </div>
       </div>
@@ -105,8 +106,8 @@
 </template>
 
 <script lang="ts">
-import { AgGridVue } from "ag-grid-vue3";
-import { useRoute } from 'vue-router'
+import {AgGridVue} from "ag-grid-vue3";
+import {useRoute} from 'vue-router'
 import {onMounted, reactive, ref, watch} from 'vue'
 import usersData from "../assets/dummy/users.json"
 
@@ -123,7 +124,7 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const user = reactive( {
+    const user = reactive({
       data: {
         FirstName: null,
         LastName: null,
@@ -132,7 +133,7 @@ export default {
         Email: null,
       }
     });
-    const course = reactive( {
+    const course = reactive({
       data: {
         Name: null,
         Description: null,
@@ -155,13 +156,21 @@ export default {
     // Each Column Definition results in one Column.
     const columnDefs = reactive({
       value: [
-        { headerName: "First Name", field: "FirstName"},
-        { headerName: "Last Name", field: "LastName"},
-        { headerName: "completed", field: "Completed" },
-        { headerName: "percentage complete", field: "PercentageComplete" },
-        { headerName: "Duration", field: "duration" }
+        {headerName: "First Name", field: "FirstName"},
+        {headerName: "Last Name", field: "LastName"},
+        {
+          headerName: "completed",
+          field: "Completed",
+          valueGetter: params => {
+            return (params.data.Completed) ? 'Yes' : 'No'
+          }
+        },
+        {headerName: "percentage complete", field: "PercentageComplete"},
+        {headerName: "Duration", field: "duration"}
       ],
     });
+
+
 
     // DefaultColDef sets props common to all Columns
     const defaultColDef = {
@@ -175,32 +184,59 @@ export default {
     }
 
     const mounted = () => {
-      let courses = JSON.parse(localStorage.getItem('courses'));
+      let courses = JSON.parse(localStorage.getItem(route.params.lpid));
       courses.forEach(c => {
         if (c.Id == route.params.id) {
           course.data = c;
         }
       })
-      // fetch(`http://localhost:8001/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+      let courseId = route.params.id;
+      // fetch(`http://localhost:8001/api/getCourseDetails/` + courseId + '?' + new URLSearchParams({
       //   lbu: store.lbu
       // }), {
-        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/`+route.params.id+ '?' + new URLSearchParams({
+      if (localStorage.getItem(courseId) === null) {
+        fetch(`https://shark-app-pjbx4.ondigitalocean.app/api/getCourseDetails/` + courseId + '?' + new URLSearchParams({
           lbu: store.lbu
         }), {
-        method: 'GET'
-      })
-          .then(resp => resp.json())
-          .then((d) => {
-            course.data.averageTime = d.averageTime;
-            course.data.assignedPeople = d.assignedPeople;
-            rowData.value = d.users;
-          })
+          method: 'GET'
+        })
+            .then(resp => resp.json())
+            .then((d) => {
+              localStorage.setItem(courseId, JSON.stringify(d))
+              course.data.averageTime = d.averageTime;
+              course.data.assignedPeople = d.assignedPeople;
+              rowData.value = d.users;
+
+              let sync =  JSON.parse(localStorage.getItem('sync'));
+
+              if (sync === null) {
+                let sync = {
+                  [courseId]:new Date().toLocaleString('en-SG')
+                }
+                lastSynced.value = sync[courseId];
+                localStorage.setItem('sync', JSON.stringify(sync))
+              } else {
+                sync[courseId] = new Date().toLocaleString('en-SG');
+                lastSynced.value = sync[courseId];
+                localStorage.setItem('sync', JSON.stringify(sync))
+              }
+
+            })
+
+      } else {
+        let details = JSON.parse(localStorage.getItem(courseId));
+        rowData.value = details.users;
+        course.data.averageTime = details.averageTime;
+        course.data.assignedPeople = details.assignedPeople;
+        let sync = JSON.parse(localStorage.getItem('sync'));
+        lastSynced.value = sync[courseId];
+      }
 
     }
 
     onMounted(() => {
       // console.log(route.params.id);
-     mounted();
+      mounted();
 
     });
     return {
@@ -218,7 +254,7 @@ export default {
         console.log(data.data);
         // router.push({name: 'courses', params: {id: data.data.Id}})
       },
-      deselectRows: () =>{
+      deselectRows: () => {
         gridApi.value.deselectAll()
       }
     };

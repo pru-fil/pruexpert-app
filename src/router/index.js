@@ -33,7 +33,7 @@ const router = createRouter({
           props: true
         },
         {
-          path: '/users/course/:id',
+          path: '/users/course/:lpid/:id',
           name: 'courses',
           // route level code-splitting
           // this generates a separate chunk (About.[hash].js) for this route

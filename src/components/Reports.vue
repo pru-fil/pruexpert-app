@@ -219,7 +219,7 @@ export default {
       },
       rowClicked: (data) => {
         console.log(data.data);
-        router.push({name: 'courses', params: {id: data.data.Id}})
+        router.push({name: 'courses', params: {id: data.data.Id, lpid:route.params.id,}})
       },
       deselectRows: () =>{
         gridApi.value.deselectAll()
