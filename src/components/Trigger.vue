@@ -130,11 +130,14 @@ export default {
     onMounted(() => {
       window.addEventListener('message', event => {
         // IMPORTANT: check the origin of the data!
+        console.log(event.origin);
         if (event.origin === 'http://pamb-uat.litmos.com.au/') {
           // The data was sent from your site.
           // Data sent with postMessage is stored in event.data:
+          console.log("successfull")
           console.log(event.data);
         } else {
+          console.log("not successfull")
           // The data was NOT sent from your site!
           // Be careful! Do not use it. This else branch is
           // here just for clarity, you usually shouldn't need it.
