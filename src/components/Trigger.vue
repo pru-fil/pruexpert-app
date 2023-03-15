@@ -128,6 +128,7 @@ export default {
     }
 
     onMounted(() => {
+      console.log("here");
       window.addEventListener('message', event => {
         // IMPORTANT: check the origin of the data!
         console.log(event.origin);
