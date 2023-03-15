@@ -20,7 +20,7 @@
                       <strong>Error!</strong> {{ errorMsg }}
                     </div>
                     <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" @click.prevent="handleSubmit" type="button">Check</button>
+                      <button class="btn btn-dark btn-lg btn-block" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Check</button>
                     </div>
 
                   </form>
