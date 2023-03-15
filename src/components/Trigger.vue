@@ -84,6 +84,7 @@ export default {
     ];
 
     const handleSubmit = () => {
+      console.log(parent.document.getElementsByClassName('dropdown open').getAttribute('title'));
       // hideForm.value = true;
       if (username.value == '') {
         hasError.value = true;
@@ -92,7 +93,8 @@ export default {
       }
       axios({
         method: 'post',
-        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
+        // url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
+        url: 'http://localhost:8001/api/completeModule',
         data: {
           username: username.value,
           password: password.value,
