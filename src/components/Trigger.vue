@@ -12,10 +12,10 @@
 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Input Username</h5>
 
-                    <div class="form-group mb-4">
-                      <label for="form2Example17">Username</label>
-                      <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />
-                    </div>
+<!--                    <div class="form-group mb-4">-->
+<!--                      <label for="form2Example17">Username</label>-->
+<!--                      <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />-->
+<!--                    </div>-->
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show">
                       <strong>Error!</strong> {{ errorMsg }}
                     </div>
@@ -84,19 +84,18 @@ export default {
     ];
 
     const handleSubmit = () => {
-      console.log(parent.document.getElementsByClassName('dropdown open').getAttribute('title'));
       // hideForm.value = true;
-      if (username.value == '') {
-        hasError.value = true;
-        errorMsg.value = "Please input username";
-        return;
-      }
+      // if (username.value == '') {
+      //   hasError.value = true;
+      //   errorMsg.value = "Please input username";
+      //   return;
+      // }
       axios({
         method: 'post',
         // url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
         url: 'http://localhost:8001/api/completeModule',
         data: {
-          username: username.value,
+          username: router.query.username,
           password: password.value,
           title: router.query.title,
           moduleId: router.query.moduleId,
@@ -128,23 +127,7 @@ export default {
     }
 
     onMounted(() => {
-      console.log("here");
-      window.addEventListener('message', event => {
-        // IMPORTANT: check the origin of the data!
-        console.log(event.origin);
-        if (event.origin === 'http://pamb-uat.litmos.com.au/') {
-          // The data was sent from your site.
-          // Data sent with postMessage is stored in event.data:
-          console.log("successfull")
-          console.log(event.data);
-        } else {
-          console.log("not successfull")
-          // The data was NOT sent from your site!
-          // Be careful! Do not use it. This else branch is
-          // here just for clarity, you usually shouldn't need it.
-          return;
-        }
-      });
+
     });
 
 
