@@ -1,21 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Main from "../components/layouts/Main.vue";
-import HelloWorld from '../components/HelloWorld.vue'
-import Courses from "../components/Courses.vue";
-import Login from "../components/layouts/Login.vue";
-import Sidebar from "../components/layouts/Sidebar.vue";
-import Trigger from "../components/Trigger.vue";
-import LearningPaths from "../components/LearningPaths.vue";
-import Reports from "../components/Reports.vue";
-import Lbus from "../components/Lbus.vue";
+
+import DigitalTrigger from "../components/DigitalTrigger.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'Trigger',
-      component: Trigger
+      name: 'DigitalTrigger',
+      component: DigitalTrigger
     }
   ]
 })

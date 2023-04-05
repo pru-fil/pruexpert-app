@@ -7,7 +7,6 @@ import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
 import 'mdb-vue-ui-kit/css/mdb.min.css';
 
-
 import './assets/main.css'
 
 const app = createApp(App)
