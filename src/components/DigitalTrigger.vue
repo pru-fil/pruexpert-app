@@ -34,7 +34,7 @@
                             </label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                             <label class="form-check-label" for="flexRadioDefault2">
                               Didn't understood everything
                             </label>
@@ -60,7 +60,7 @@
                     <div class="row">
                       <div class="col-md-12 text-center">
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Check</button>
+                          <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Submit</button>
                         </div>
                       </div>
                     </div>
@@ -74,7 +74,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Success!</strong> Module Completed! Proceed to next module.
+                      <strong>Success!</strong> Module Completed!
                     </div>
                   </div>
 
@@ -144,8 +144,8 @@ export default {
       // }
       axios({
         method: 'post',
-        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
-        // url: 'http://localhost:8001/api/completeModule',
+        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completePruexpert',
+        // url: 'http://localhost:8001/api/completePruexpert',
         data: {
           username: router.query.username,
           password: password.value,
