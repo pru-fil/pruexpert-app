@@ -2,7 +2,7 @@
   <section class="vh-75">
     <div class="container py-5 h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-12 mx-auto" style="width:500px">
+        <div class="col col-xl-12 mx-auto" style="width:100%">
           <div class="card" style="border-radius: 1rem;">
             <div class="row g-0">
               <div class="col-md-12 col-lg-12 d-flex align-items-center">
@@ -10,7 +10,7 @@
 
                   <form v-if="!hideForm" >
 
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Input Username</h5>
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">{{ inputMessage }}</h5>
 
 <!--                    <div class="form-group mb-4">-->
 <!--                      <label for="form2Example17">Username</label>-->
@@ -19,8 +19,8 @@
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show">
                       <strong>Error!</strong> {{ errorMsg }}
                     </div>
-                    <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Check</button>
+                    <div class="pt-1 mb-4 text-center">
+                      <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Submit</button>
                     </div>
 
                   </form>
@@ -56,6 +56,7 @@ export default {
       id: null
     })
     let hideForm = ref(false);
+    let inputMessage = ref('');
     let username = ref('');
     let password = ref('');
     const hasError = ref(false);
@@ -127,11 +128,14 @@ export default {
     }
 
     onMounted(() => {
+      inputMessage.value = 'To access this e-learning course. Please ensure that you have a valid '+ router.query.type
+          +' .Click the "Submit" button below to allow the system to verify your license.';
 
     });
 
 
     return {
+      inputMessage,
       hideForm,
       hasError,
       errorMsg,
