@@ -27,7 +27,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Success!</strong> Module Completed! Proceed to next module.
+                      <strong>Great news!</strong> Your license has been successfully verified. Please click "Next" button abouve to start the e-learning.
                     </div>
                   </div>
 
