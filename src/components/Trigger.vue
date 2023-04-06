@@ -129,7 +129,7 @@ export default {
 
     onMounted(() => {
       inputMessage.value = 'To access this e-learning course. Please ensure that you have a valid '+ router.query.type
-          +' .Click the "Submit" button below to allow the system to verify your license.';
+          +' license. Click the "Submit" button below to allow the system to verify your license.';
 
     });
 
