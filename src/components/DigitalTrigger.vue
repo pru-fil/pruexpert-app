@@ -52,8 +52,8 @@
                       <div class="col-md-12">
 
                         <div class="form-group mb-4">
-                          <label for="form2Example17">Please Input Learnings Here</label>
-                          <textarea type="text" id="form2Example17" v-model="username" placeholder="Learnings" class="form-control" />
+                          <label for="learnings-textarea">Please Input Learnings Here</label>
+                          <textarea type="text" id="learnings-textarea" v-model="learnings" placeholder="Learnings" class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -108,7 +108,7 @@ export default {
       id: null
     })
     let hideForm = ref(false);
-    let username = ref('');
+    let learnings = ref('');
     let password = ref('');
     const hasError = ref(false);
     const errorMsg = ref('');
@@ -137,11 +137,11 @@ export default {
 
     const handleSubmit = () => {
       // hideForm.value = true;
-      // if (username.value == '') {
-      //   hasError.value = true;
-      //   errorMsg.value = "Please input username";
-      //   return;
-      // }
+      if (learnings.value == '') {
+        hasError.value = true;
+        errorMsg.value = "Please input Learnings";
+        return;
+      }
       axios({
         method: 'post',
         url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completePruexpert',
@@ -187,7 +187,7 @@ export default {
       hideForm,
       hasError,
       errorMsg,
-      username,
+      learnings,
       password,
       steps,
       stepValue,
