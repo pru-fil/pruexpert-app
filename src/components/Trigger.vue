@@ -17,7 +17,7 @@
 <!--                      <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />-->
 <!--                    </div>-->
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
-                      <strong>Access Denied!&nbsp;</strong> <div v-html="errorMsg"></div>
+                      <div v-html="errorMsg"></div>
                     </div>
                     <div class="pt-1 mb-4 text-center">
                       <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Submit</button>
