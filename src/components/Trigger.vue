@@ -93,8 +93,8 @@ export default {
       // }
       axios({
         method: 'post',
-        // url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
-        url: 'http://localhost:8001/api/completeModule',
+        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeModule',
+        // url: 'http://localhost:8001/api/completeModule',
         data: {
           username: router.query.username,
           password: password.value,
