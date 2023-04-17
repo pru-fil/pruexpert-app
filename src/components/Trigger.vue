@@ -16,8 +16,8 @@
 <!--                      <label for="form2Example17">Username</label>-->
 <!--                      <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />-->
 <!--                    </div>-->
-                    <div v-if="hasError" class="alert alert-danger alert-dismissible fade show">
-                      <strong>Error!</strong> {{ errorMsg }}
+                    <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
+                      <div v-html="errorMsg"></div>
                     </div>
                     <div class="pt-1 mb-4 text-center">
                       <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Submit</button>
@@ -27,7 +27,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Great news!</strong> Your license has been successfully verified. Please click "Next" button abouve to start the e-learning.
+                      <strong>Access Granted! </strong> Your license has been successfully verified. Please click "Next" button above to start the e-learning.
                     </div>
                   </div>
 
@@ -128,7 +128,7 @@ export default {
     }
 
     onMounted(() => {
-      inputMessage.value = 'To access this e-learning course. Please ensure that you have a valid '+ router.query.type
+      inputMessage.value = 'To access this e-learning course, please ensure that you have a valid '+ router.query.type
           +' license. Click the "Submit" button below to allow the system to verify your license.';
 
     });
