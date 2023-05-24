@@ -1,14 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import DigitalTrigger from "../components/DigitalTrigger.vue";
+import Assessment from "../components/nextgen/Assessment.vue";
+import Comments from "../components/nextgen/Comments.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'DigitalTrigger',
-      component: DigitalTrigger
+      name: 'Assessment',
+      component: Assessment
+    },
+    {
+      path: '/comments',
+      name: 'Comments',
+      component: Comments
     }
   ]
 })
