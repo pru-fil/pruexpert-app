@@ -26,8 +26,8 @@ onMounted(() => {
       // username: router.query.username,
       // password: password.value,
       // title: router.query.title,
-      // moduleId: router.query.moduleId,
-      moduleId: 2036359,
+      moduleId: router.query.moduleId,
+      // moduleId: 2036359,
       lbu: 'PAMB',
     }
   }).then((resp) => {
