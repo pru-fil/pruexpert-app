@@ -13,11 +13,13 @@ import Comment from "./Comment.vue";
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
 import axios from "axios";
+import { useRoute } from 'vue-router'
 
 const data = reactive({value: []});
 
 onMounted(() => {
-  console.log("Here");
+  const router = useRoute();
+
   axios({
     method: 'get',
     url: 'https://shark-app-pjbx4.ondigitalocean.app/api/comments',
