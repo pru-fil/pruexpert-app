@@ -20,8 +20,8 @@ onMounted(() => {
   console.log("Here");
   axios({
     method: 'get',
-    // url: 'https://trigger-be-prod-dfvrw.ondigitalocean.app/api/completeModule',
-    url: 'http://localhost:8001/api/comments',
+    url: 'https://shark-app-pjbx4.ondigitalocean.app/api/comments',
+    // url: 'http://localhost:8001/api/comments',
     params: {
       // username: router.query.username,
       // password: password.value,
