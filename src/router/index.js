@@ -9,13 +9,20 @@ import Trigger from "../components/Trigger.vue";
 import LearningPaths from "../components/LearningPaths.vue";
 import Reports from "../components/Reports.vue";
 import Lbus from "../components/Lbus.vue";
+import Assessment from "../components/nextgen/Assessment.vue";
+import Comments from "../components/nextgen/Comments.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'Trigger',
-      component: Trigger
+      name: 'Assessment',
+      component: Assessment
+    },
+    {
+      path: '/comments',
+      name: 'Comments',
+      component: Comments
     }
   ]
 })

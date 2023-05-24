@@ -10,12 +10,11 @@
 
                   <form v-if="!hideForm" >
 
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">{{ inputMessage }}</h5>
+                    <h5 class="fw-normal" style="letter-spacing: 1px;"><div v-html="inputMessage"></div></h5>
 
-<!--                    <div class="form-group mb-4">-->
-<!--                      <label for="form2Example17">Username</label>-->
-<!--                      <input type="text" id="form2Example17" v-model="username" placeholder="Enter username" class="form-control" />-->
-<!--                    </div>-->
+                    <div class="form-group mb-4">
+                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="Enter Comment Here" class="form-control" />
+                    </div>
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
                       <div v-html="errorMsg"></div>
                     </div>
@@ -48,7 +47,7 @@ import axios from 'axios'
 import { useRoute } from 'vue-router'
 
 export default {
-  name: "Trigger",
+  name: "Assessment",
 
   setup() {
     const router = useRoute();
@@ -57,7 +56,7 @@ export default {
     })
     let hideForm = ref(false);
     let inputMessage = ref('');
-    let username = ref('');
+    let comment = ref('');
     let password = ref('');
     const hasError = ref(false);
     const errorMsg = ref('');
@@ -94,13 +93,14 @@ export default {
       axios({
         method: 'post',
         // url: 'https://trigger-be-prod-dfvrw.ondigitalocean.app/api/completeModule',
-        url: 'http://localhost:8001/api/completeModule',
+        url: 'http://localhost:8001/api/completePruexpert',
         data: {
           username: router.query.username,
           password: password.value,
           title: router.query.title,
           moduleId: router.query.moduleId,
           type: router.query.type,
+          comment: comment.value
         }
       }).then((resp) => {
         let data = resp.data;
@@ -116,7 +116,7 @@ export default {
         }
 
         console.log(resp.data);
-      })
+      }).catch(() => void 0)
     }
 
     function indicatorClass(step) {
@@ -128,8 +128,8 @@ export default {
     }
 
     onMounted(() => {
-      inputMessage.value = 'To access this e-learning course, please ensure that you have a valid '+ router.query.type
-          +' license. Click the "Submit" button below to allow the system to verify your license.';
+      inputMessage.value = '<h2>Hi ' +router.query.username+ '. Did the tips in the video above work for you?.</h2> <br>' +
+          'Share your tips and experience on effective client presentations in the text box below and click on the submit button';
 
     });
 
@@ -139,7 +139,7 @@ export default {
       hideForm,
       hasError,
       errorMsg,
-      username,
+      comment,
       password,
       steps,
       stepValue,
