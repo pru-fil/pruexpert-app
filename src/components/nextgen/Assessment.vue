@@ -10,10 +10,10 @@
 
                   <form v-if="!hideForm" >
 
-                    <h5 class="fw-normal" style="letter-spacing: 1px;"><div v-html="inputMessage"></div></h5>
+                    <h5 class="fw-normal mb-4" style="letter-spacing: 1px;"><div v-html="inputMessage"></div></h5>
 
                     <div class="form-group mb-4">
-                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="Enter Comment Here" class="form-control" />
+                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="Type here" class="form-control" />
                     </div>
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
                       <div v-html="errorMsg"></div>
@@ -50,6 +50,11 @@ export default {
   name: "Assessment",
 
   setup() {
+    const errorMsgs = {
+      error1: 'Thank you for your response.',
+      error2: 'Error. Please try submitting again',
+      error3: 'This field is required'
+    }
     const router = useRoute();
     const user =  reactive({
       id: null
@@ -128,8 +133,11 @@ export default {
     }
 
     onMounted(() => {
-      inputMessage.value = '<h2>Hi ' +router.query.username+ '. Did the tips in the video above work for you?.</h2> <br>' +
-          'Share your tips and experience on effective client presentations in the text box below and click on the submit button';
+      inputMessage.value = '<h2>Let’s work on the second tip: being empathetic.</h2> <br>' +
+          'Identify one prospect whom you haven’t successfully closed a sale with. <br><br>' +
+          'Consider all the information you have on them and put yourself in their shoes. ' +
+          'If you were them, what would be your greatest priorities, needs and worries right now?<br><br>' +
+          'Make a list of these reflections. List the top five reflections that come to mind in the box below.';
 
     });
 

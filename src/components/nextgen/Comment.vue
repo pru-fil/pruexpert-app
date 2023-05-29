@@ -5,7 +5,7 @@
         <p class="card-text">{{props.data.comment}}</p>
         <span class="text3">{{props.data.created_at}}</span>
       </div>
-      <h6 class="card-subtitle mb-2 text-body-secondary">{{ props.data.username }}</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{ props.data.first_name }} {{ props.data.last_name }}</h6>
     </div>
   </div>
 </template>
