@@ -2,7 +2,7 @@
   <div class="card mb-2" style="width: 100%;">
     <div class="card-body">
       <div class="d-flex justify-content-between py-1 pt-2">
-        <p class="card-text">{{props.data.comment}}</p>
+        <p class="card-text" style="white-space: pre-wrap;">{{props.data.comment}}</p>
         <span class="text3">{{props.data.created_at}}</span>
       </div>
       <h6 class="card-subtitle mb-2 text-body-secondary">{{ props.data.first_name }} {{ props.data.last_name }}</h6>
