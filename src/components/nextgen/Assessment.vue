@@ -26,7 +26,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Access Granted! </strong> Your license has been successfully verified. Please click "Next" button above to start the e-learning.
+                      <strong>Success! </strong> Please click "Next" button above to view comments.
                     </div>
                   </div>
 
