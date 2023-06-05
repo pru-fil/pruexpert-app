@@ -16,6 +16,7 @@
     "bootstrap-vue": "^2.23.1",
     "chart.js": "^4.2.0",
     "datatables.net-vue3": "^2.0.0",
+    "laravel-vue-pagination": "^4.1.0",
     "mdb-ui-kit": "^6.1.0",
     "mdb-vue-ui-kit": "^3.1.1",
     "vue": "^3.2.45",
