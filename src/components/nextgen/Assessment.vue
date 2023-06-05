@@ -6,20 +6,22 @@
           <div class="card" style="border-radius: 1rem;">
             <div class="row g-0">
               <div class="col-md-12 col-lg-12 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
+                <div class="card-body pt-4 pb-2 text-black">
 
                   <form v-if="!hideForm" >
 
-                    <h5 class="fw-normal mb-4" style="letter-spacing: 1px;"><div v-html="inputMessage"></div></h5>
+                    <p><div v-html="inputMessage"></div></p>
 
                     <div class="form-group mb-4">
-                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="Type here" class="form-control" />
+                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="TYPE HERE" class="form-control" required/>
                     </div>
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
                       <div v-html="errorMsg"></div>
                     </div>
                     <div class="pt-1 mb-4 text-center">
-                      <button class="btn btn-dark btn-lg" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">Submit</button>
+                      <button class="btn btn-dark btn-lg" style="background-color: #ED1B2E !important;" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">
+                        <img src="src/assets/images/cursor.png" style="background-color: whitre"/> Submit
+                      </button>
                     </div>
 
                   </form>
@@ -95,6 +97,11 @@ export default {
       //   errorMsg.value = "Please input username";
       //   return;
       // }
+      if (comment.value.trim() === "") {
+        hasError.value = true;
+        errorMsg.value = "This field is required";
+        return;
+      }
       axios({
         method: 'post',
         url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completePruexpert',
@@ -133,11 +140,12 @@ export default {
     }
 
     onMounted(() => {
-      inputMessage.value = '<h2>Let’s work on the second tip: being empathetic.</h2> <br>' +
-          'Identify one prospect whom you haven’t successfully closed a sale with. <br><br>' +
-          'Consider all the information you have on them and put yourself in their shoes. ' +
-          'If you were them, what would be your greatest priorities, needs and worries right now?<br><br>' +
-          'Make a list of these reflections. List the top five reflections that come to mind in the box below.';
+      inputMessage.value = "<p style=\"font-size: 26px;\ font-weight: 600;\" >LET'S WORK ON THE SECOND TIP: BEING EMPATHETIC</p>" +
+          "<hr />"+
+          "<p style=\"font-size: 21px;\">Identify one prospect whom you haven’t successfully closed a sale with. </p>" +
+          "<p style=\"font-size: 21px;\">Consider all the information you have on them and put yourself in their shoes. " +
+          "If you were them, what would be your greatest priorities, needs and worries right now?</p>" +
+          "<p style=\"font-size: 21px;\">Make a list of these reflections. List the top five reflections that come to mind in the box below.</p>";
 
     });
 
@@ -164,5 +172,14 @@ export default {
 <style lang="scss" scoped>
 #content{
   margin-left: 0 !important;
+}
+#form2Example17::-webkit-input-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#form2Example17 {
+  background-color: #D9E1E2;
 }
 </style>
