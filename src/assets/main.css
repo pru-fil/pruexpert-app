@@ -6,7 +6,7 @@ body {
   width: 100vw;
   margin: 0;
   font-family:  "Open Sans", sans-serif;
-  background: #FBFBFB;
+  background-color: #FBFBFB;
 
 }
 
@@ -35,7 +35,8 @@ a,
   body {
     display: flex;
     place-items: center;
-    background-color: #eee;
+    background-color: #FBFBFB;
+    font-family:  "Open Sans", sans-serif;
   }
 
   #app {
