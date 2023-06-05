@@ -20,7 +20,7 @@
                     </div>
                     <div class="pt-1 mb-4 text-center">
                       <button class="btn btn-dark btn-lg" style="background-color: #ED1B2E !important;" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">
-                        <img src="src/assets/images/cursor.png" style="background-color: whitre"/> Submit
+                        <img src="@/assets/images/cursor.png"/> Submit
                       </button>
                     </div>
 
@@ -99,7 +99,7 @@ export default {
       // }
       if (comment.value.trim() === "") {
         hasError.value = true;
-        errorMsg.value = "This field is required";
+        errorMsg.value = "This field is required`";
         return;
       }
       axios({
