@@ -28,7 +28,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Success! </strong> Please click "Next" button above to view comments.
+                      <strong>Success! </strong> Thank you for your response. Please click "Next" button above to view comments.
                     </div>
                   </div>
 

@@ -23,10 +23,10 @@ import Comment from "./Comment.vue";
 </template>
 
 <script setup>
+import { Bootstrap5Pagination } from 'laravel-vue-pagination';
 import { ref, reactive, onMounted } from 'vue'
 import axios from "axios";
 import { useRoute } from 'vue-router'
-import { Bootstrap5Pagination } from 'laravel-vue-pagination';
 const router = useRoute();
 const data = reactive({value: []});
 const moduleId = router.query.moduleId;
