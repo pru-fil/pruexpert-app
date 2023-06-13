@@ -5,9 +5,9 @@ import Comment from "./Comment.vue";
 <template>
   <div class="container py-5 h-75">
     <div class="text-center mb-4">
-      <p style="font-weight: 600; font-size: 26px; color: #DA291C">CHECK OUT WHAT FELLOW PEERS HAVE TO SAY!</p>
+      <p style="font-weight: 600; font-size: 22px; color: #DA291C">CHECK OUT WHAT FELLOW PEERS HAVE TO SAY!</p>
       <hr/>
-      <p style="font-weight: 600;font-size: 16px;">TOTAL COMMENTS: {{data.value.total}}</p>
+      <p style="font-weight: 600;font-size: 14px;">TOTAL COMMENTS: {{data.value.total}}</p>
     </div>
     <div  v-for="(item, index) in data.value.data">
       <Comment :data="item" />

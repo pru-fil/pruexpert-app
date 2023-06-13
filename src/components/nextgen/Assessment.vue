@@ -19,7 +19,7 @@
                       <div v-html="errorMsg"></div>
                     </div>
                     <div class="pt-1 mb-4 text-center">
-                      <button class="btn btn-dark btn-lg" style="background-color: #ED1B2E !important;" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">
+                      <button class="btn btn-dark btn-lg" style="background-color: #ED1B2E !important; font-weight: 600;" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">
                         <img src="@/assets/images/cursor.png"/> Submit
                       </button>
                     </div>
@@ -140,12 +140,12 @@ export default {
     }
 
     onMounted(() => {
-      inputMessage.value = "<p style=\"font-size: 26px;\ font-weight: 600;\" >LET'S WORK ON THE SECOND TIP: BEING EMPATHETIC</p>" +
+      inputMessage.value = "<p style=\"font-size: 22px;\ font-weight: 600;\" >LET'S WORK ON THE SECOND TIP: BEING EMPATHETIC</p>" +
           "<hr />"+
-          "<p style=\"font-size: 21px;\">Identify one prospect whom you haven’t successfully closed a sale with. </p>" +
-          "<p style=\"font-size: 21px;\">Consider all the information you have on them and put yourself in their shoes. " +
+          "<p style=\"font-size: 16px;\">Identify one prospect whom you haven’t successfully closed a sale with. </p>" +
+          "<p style=\"font-size: 16px;\">Consider all the information you have on them and put yourself in their shoes. " +
           "If you were them, what would be your greatest priorities, needs and worries right now?</p>" +
-          "<p style=\"font-size: 21px;\">Make a list of these reflections. List the top five reflections that come to mind in the box below.</p>";
+          "<p style=\"font-size: 16px;\">Make a list of these reflections. List the top five reflections that come to mind in the box below.</p>";
 
     });
 
@@ -180,6 +180,6 @@ export default {
 }
 
 #form2Example17 {
-  background-color: #D9E1E2;
+  background-color: #ECF0F0;
 }
 </style>
