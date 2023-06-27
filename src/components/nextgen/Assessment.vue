@@ -32,7 +32,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Success!&nbsp;</strong> {{$t('success')}} Please click "Next" button above to view comments.
+                      <strong>Success!&nbsp;</strong> {{$t('success')}}
                     </div>
                   </div>
 
