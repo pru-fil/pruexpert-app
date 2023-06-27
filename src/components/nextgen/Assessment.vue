@@ -106,7 +106,6 @@ export default {
         // url: 'http://localhost:8001/api/completePruexpert',
         data: {
           username: router.query.username,
-          password: password.value,
           title: router.query.title,
           moduleId: router.query.moduleId,
           type: router.query.type,
