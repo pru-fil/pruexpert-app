@@ -10,17 +10,21 @@
 
                   <form v-if="!hideForm" >
 
-                    <p><div v-html="inputMessage"></div></p>
+                    <p style="font-size: 22px; font-weight: 600;" >{{$t('headerOne')}}</p>
+                    <hr />
+                    <p style="font-size: 16px;">{{$t('headerTwo')}}</p>
+                    <p style="font-size: 16px;">{{$t('headerThree')}}</p>
+                    <p style="font-size: 16px;">{{$t('headerFour')}}</p>
 
                     <div class="form-group mb-4">
-                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" placeholder="TYPE HERE" class="form-control" required/>
+                      <textarea type="text" id="form2Example17" rows="5" v-model="comment" :placeholder="$t('placeholder')" class="form-control" required/>
                     </div>
                     <div v-if="hasError" class="alert alert-danger alert-dismissible fade show d-inline-flex">
-                      <div v-html="errorMsg"></div>
+                      <strong>Error!&nbsp;</strong> {{ errorMsg }}
                     </div>
                     <div class="pt-1 mb-4 text-center">
                       <button class="btn btn-dark btn-lg" style="background-color: #ED1B2E !important; font-weight: 600;" id="trigger-btn-check" @click.prevent="handleSubmit" type="button">
-                        <img src="@/assets/images/cursor.png"/> Submit
+                        <img src="@/assets/images/cursor.png"/> {{ $t('submit')}}
                       </button>
                     </div>
 
@@ -28,7 +32,7 @@
 
                   <div v-if="hideForm">
                     <div class="alert alert-success alert-dismissible fade show">
-                      <strong>Success! </strong> Thank you for your response. Please click "Next" button above to view comments.
+                      <strong>Success!&nbsp;</strong> {{$t('success')}} Please click "Next" button above to view comments.
                     </div>
                   </div>
 
@@ -47,24 +51,18 @@
 import {reactive, computed, onMounted, ref} from 'vue';
 import axios from 'axios'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import i18n from "../../i18n";
+
 
 export default {
   name: "Assessment",
 
   setup() {
-    const errorMsgs = {
-      error1: 'Thank you for your response.',
-      error2: 'Error. Please try submitting again',
-      error3: 'This field is required'
-    }
+    const { t } = useI18n();
     const router = useRoute();
-    const user =  reactive({
-      id: null
-    })
     let hideForm = ref(false);
-    let inputMessage = ref('');
     let comment = ref('');
-    let password = ref('');
     const hasError = ref(false);
     const errorMsg = ref('');
     const stepCount = 0;
@@ -99,7 +97,7 @@ export default {
       // }
       if (comment.value.trim() === "") {
         hasError.value = true;
-        errorMsg.value = "This field is required`";
+        errorMsg.value = t('empty');
         return;
       }
       axios({
@@ -119,7 +117,7 @@ export default {
         console.log(data.code);
         if (data.code == 500 || data.code == 404) {
           hasError.value = true;
-          errorMsg.value = data.msg;
+          errorMsg.value = t("error");
         } else if (data.code == 200) {
           hideForm.value = true;
         } else {
@@ -128,7 +126,10 @@ export default {
         }
 
         console.log(resp.data);
-      }).catch(() => void 0)
+      }).catch(() => {
+        hasError.value = true;
+        errorMsg.value = t("error");
+      })
     }
 
     function indicatorClass(step) {
@@ -139,24 +140,11 @@ export default {
       }
     }
 
-    onMounted(() => {
-      inputMessage.value = "<p style=\"font-size: 22px;\ font-weight: 600;\" >LET'S WORK ON THE SECOND TIP: BEING EMPATHETIC</p>" +
-          "<hr />"+
-          "<p style=\"font-size: 16px;\">Identify one prospect whom you haven’t successfully closed a sale with. </p>" +
-          "<p style=\"font-size: 16px;\">Consider all the information you have on them and put yourself in their shoes. " +
-          "If you were them, what would be your greatest priorities, needs and worries right now?</p>" +
-          "<p style=\"font-size: 16px;\">Make a list of these reflections. List the top five reflections that come to mind in the box below.</p>";
-
-    });
-
-
     return {
-      inputMessage,
       hideForm,
       hasError,
       errorMsg,
       comment,
-      password,
       steps,
       stepValue,
       stepCount,

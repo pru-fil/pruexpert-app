@@ -5,9 +5,9 @@ import Comment from "./Comment.vue";
 <template>
   <div class="container py-5 h-75">
     <div class="text-center mb-4">
-      <p style="font-weight: 600; font-size: 22px; color: #DA291C">CHECK OUT WHAT FELLOW PEERS HAVE TO SAY!</p>
+      <p style="font-weight: 600; font-size: 22px; color: #DA291C">{{ $t('commentHeader')}}</p>
       <hr/>
-      <p style="font-weight: 600;font-size: 14px;">TOTAL COMMENTS: {{data.value.total}}</p>
+      <p style="font-weight: 600;font-size: 14px;">{{ $t('total', data.value.total)}}</p>
     </div>
     <div  v-for="(item, index) in data.value.data">
       <Comment :data="item" />
@@ -27,12 +27,15 @@ import { Bootstrap5Pagination } from 'laravel-vue-pagination';
 import { ref, reactive, onMounted } from 'vue'
 import axios from "axios";
 import { useRoute } from 'vue-router'
+import i18n from "../../i18n";
+
 const router = useRoute();
 const data = reactive({value: []});
 const moduleId = router.query.moduleId;
 
 onMounted(() => {
   getComments(1)
+  i18n.setLocale(router.query.type)
 })
 
 const getComments = (page) => {
@@ -50,7 +53,6 @@ const getComments = (page) => {
     }
   }).then((resp) => {
     data.value = resp.data;
-    console.log(data.value);
   })
 }
 </script>
