@@ -28,7 +28,7 @@ export default {
 
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
-        success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Berikutnya" di atas untuk melihat komentar.',
+        success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
         error: "Silakan masukkan jawaban Anda kembali.",
         empty: "Bagian ini wajib diisi",
 
@@ -44,7 +44,7 @@ export default {
 
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
-        success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "បន្ទាប់" ខាងលើដើម្បីមើលមតិ។',
+        success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
         error: "មានកំហុស។ សូមព្យាយាមដាក់ស្នើម្តងទៀត។",
         empty: "តម្រូវឲ្យបំពេញនៅចន្លោះនេះ",
 
@@ -60,7 +60,7 @@ export default {
 
         placeholder: "在此輸入",
         submit: "提交",
-        success: '感謝閣下的回應。 請點擊上面的“下一步”按鈕查看評論。',
+        success: '感謝閣下的回應。 請點擊上面的“Next”按鈕查看評論。',
         error: "感謝閣下的回應。",
         empty: "此部份是必須填寫。",
 
