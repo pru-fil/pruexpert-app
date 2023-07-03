@@ -10,11 +10,13 @@
 
                   <form v-if="!hideForm" >
 
-                    <p style="font-size: 22px; font-weight: 600;" >{{$t('headerOne')}}</p>
-                    <hr />
-                    <p style="font-size: 16px;">{{$t('headerTwo')}}</p>
-                    <p style="font-size: 16px;">{{$t('headerThree')}}</p>
-                    <p style="font-size: 16px;">{{$t('headerFour')}}</p>
+                    <div v-html="header"></div>
+
+<!--                    <p style="font-size: 22px; font-weight: 600;" >{{$t('headerOne')}}</p>-->
+<!--                    <hr />-->
+<!--                    <p style="font-size: 16px;">{{$t('headerTwo')}}</p>-->
+<!--                    <p style="font-size: 16px;">{{$t('headerThree')}}</p>-->
+<!--                    <p style="font-size: 16px;">{{$t('headerFour')}}</p>-->
 
                     <div class="form-group mb-4">
                       <textarea type="text" id="form2Example17" rows="5" v-model="comment" :placeholder="$t('placeholder')" class="form-control" required/>
@@ -52,7 +54,7 @@ import {reactive, computed, onMounted, ref} from 'vue';
 import axios from 'axios'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import i18n from "../../i18n";
+import vidMsg from '../../_helpers/videos'
 
 
 export default {
@@ -63,6 +65,7 @@ export default {
     const router = useRoute();
     let hideForm = ref(false);
     let comment = ref('');
+    const header = ref('');
     const hasError = ref(false);
     const errorMsg = ref('');
     const stepCount = 0;
@@ -89,12 +92,6 @@ export default {
     ];
 
     const handleSubmit = () => {
-      // hideForm.value = true;
-      // if (username.value == '') {
-      //   hasError.value = true;
-      //   errorMsg.value = "Please input username";
-      //   return;
-      // }
       if (comment.value.trim() === "") {
         hasError.value = true;
         errorMsg.value = t('empty');
@@ -113,7 +110,6 @@ export default {
         }
       }).then((resp) => {
         let data = resp.data;
-        console.log(data.code);
         if (data.code == 500 || data.code == 404) {
           hasError.value = true;
           errorMsg.value = t("error");
@@ -124,23 +120,20 @@ export default {
           errorMsg.value = "Unknown Error Occurred";
         }
 
-        console.log(resp.data);
       }).catch(() => {
         hasError.value = true;
         errorMsg.value = t("error");
       })
     }
 
-    function indicatorClass(step) {
-      console.log(step);
-      return {
-        active: step.id === currentStep,
-        complete: currentStep > step.id
-      }
-    }
+    onMounted(() => {
+      let vid = router.query.video ?? 1
 
+      header.value = vidMsg.setVideo(vid).header;
+    });
     return {
       hideForm,
+      header,
       hasError,
       errorMsg,
       comment,
@@ -148,7 +141,6 @@ export default {
       stepValue,
       stepCount,
       currentStep,
-      indicatorClass,
       handleSubmit
     }
 

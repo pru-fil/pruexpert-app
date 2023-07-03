@@ -27,7 +27,6 @@ import { Bootstrap5Pagination } from 'laravel-vue-pagination';
 import { ref, reactive, onMounted } from 'vue'
 import axios from "axios";
 import { useRoute } from 'vue-router'
-import i18n from "../../i18n";
 
 const router = useRoute();
 const data = reactive({value: []});
@@ -35,7 +34,6 @@ const moduleId = router.query.moduleId;
 
 onMounted(() => {
   getComments(1)
-  i18n.setLocale(router.query.type)
 })
 
 const getComments = (page) => {

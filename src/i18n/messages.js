@@ -7,6 +7,10 @@ export default {
             "If you were them, what would be your greatest priorities, needs and worries right now?",
         headerFour: "Make a list of these reflections. List the top five reflections that come to mind in the box below.",
 
+        vidTwoHeaderOne: "Look through your list of contacts and identify at least three whom " +
+            "you had previously thought would not be possible to convert.",
+        vidTwoHeaderTwo: "Make a plan on how you can convert these prospects. Share three key steps of your plan below.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -26,6 +30,11 @@ export default {
             "Jika Anda adalah mereka, apa prioritas, kebutuhan, dan kekhawatiran terbesar Anda saat ini?",
         headerFour: "Buat daftar evaluasi. Cantumkan lima teratas yang muncul di benak Anda dalam kotak di bawah ini. ",
 
+        vidTwoHeaderOne: "Lihat daftar kontak Anda dan identifikasi setidaknya tiga orang " +
+            "yang sebelumnya Anda anggap tidak mungkin untuk didekati.",
+        vidTwoHeaderTwo: "Buat rencana tentang bagaimana Anda dapat mendekati prospek ini. " +
+            "Bagikan tiga langkah kunci dari rencana Anda di bawah ini.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -42,6 +51,9 @@ export default {
         headerThree: "កំណត់អតិថិជនគោលដៅមួយដែលអ្នកមិនទាន់បានបិទការលក់ដោយជោគជ័យ",
         headerFour: "ធ្វើបញ្ជីនៃការឆ្លុះបញ្ចាំងទាំងនេះ។ សរសេរការឆ្លុះបញ្ចាំងកំពូលទាំងប្រាំដែលអ្នកយល់ឃើញក្នុងប្រអប់ខាងក្រោម។",
 
+        vidTwoHeaderOne: "រកមើលតាមរយៈបញ្ជីលេខទំនាក់ទំនងរបស់អ្នក ហើយស្វែងរកមនុស្សយ៉ាងតិចបីនាក់ដែលអ្នកធ្លាប់គិតថានឹងមិនអាចបំប្លែងទៅជាអតិថិជនបាន",
+        vidTwoHeaderTwo: "រៀបចំផែនការអំពីរបៀបដែលអ្នកអាចបំប្លែងអតិថិជនគោលដៅទាំងនេះ។ ចែករំលែកជំហានសំខាន់ៗចំនួនបីនៃផែនការរបស់អ្នកខាងក្រោម។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -57,6 +69,9 @@ export default {
         headerTwo: "選擇一位您尚未成功完成銷售的潛在客戶。",
         headerThree: "細想您掌握所有有關他們的信息，並設身處地為他們著想。 如果你是他們，什麼是你現在最優先考慮的事項、需求或擔憂？",
         headerFour: "先列出所有反思。 在下面的框中列出您認為最重要的五個反思。",
+
+        vidTwoHeaderOne: "查看您的聯絡人列表 (電話簿)，並找出最少三個您之前認為不可能轉為客戶的人。",
+        vidTwoHeaderTwo: "制定計劃如何轉化這些潛在客戶。 請於下面分享您計劃中三個關鍵步驟。",
 
         placeholder: "在此輸入",
         submit: "提交",

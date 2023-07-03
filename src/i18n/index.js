@@ -10,6 +10,7 @@ function setup(options = { locale: defaultLocale }) {
         legacy: false,
         locale: options.locale,
         fallbackLocale: defaultLocale,
+        globalInjection: true,
         messages,
     })
     setLocale(options.locale)
@@ -19,6 +20,7 @@ function setup(options = { locale: defaultLocale }) {
 function setLocale(newLocale) {
     _i18n.global.locale.value = newLocale
 }
+
 // Public interface
 export default {
     // Expose the VueI18n instance via a getter
