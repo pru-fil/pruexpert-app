@@ -11,6 +11,10 @@ export default {
             "you had previously thought would not be possible to convert.",
         vidTwoHeaderTwo: "Make a plan on how you can convert these prospects. Share three key steps of your plan below.",
 
+        vidThreeHeaderOne: "What are some systems you can apply to your routine?",
+        vidThreeHeaderTwo: "Think of three that are realistic, manageable, and can help you improve your productivity " +
+            "and efficiency each day.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -35,6 +39,10 @@ export default {
         vidTwoHeaderTwo: "Buat rencana tentang bagaimana Anda dapat mendekati prospek ini. " +
             "Bagikan tiga langkah kunci dari rencana Anda di bawah ini.",
 
+        vidThreeHeaderOne: "Apa saja sistem yang dapat Anda terapkan pada rutinitas Anda?",
+        vidThreeHeaderTwo: "Pikirkan tiga hal yang realistis, dapat dikelola, dan dapat membantu " +
+            "Anda meningkatkan produktivitas dan efisiensi setiap hari.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -54,6 +62,10 @@ export default {
         vidTwoHeaderOne: "រកមើលតាមរយៈបញ្ជីលេខទំនាក់ទំនងរបស់អ្នក ហើយស្វែងរកមនុស្សយ៉ាងតិចបីនាក់ដែលអ្នកធ្លាប់គិតថានឹងមិនអាចបំប្លែងទៅជាអតិថិជនបាន",
         vidTwoHeaderTwo: "រៀបចំផែនការអំពីរបៀបដែលអ្នកអាចបំប្លែងអតិថិជនគោលដៅទាំងនេះ។ ចែករំលែកជំហានសំខាន់ៗចំនួនបីនៃផែនការរបស់អ្នកខាងក្រោម។",
 
+        vidThreeHeaderOne: "តើមានប្រព័ន្ធអ្វីខ្លះដែលអ្នកអាចអនុវត្តចំពោះទម្លាប់របស់អ្នក?",
+        vidThreeHeaderTwo: "គិតពីចំនួនបីដែលមានលក្ខណៈប្រាកដនិយម អាចគ្រប់គ្រងបាន " +
+            "និងអាចជួយអ្នកបង្កើនផលិតភាព និងប្រសិទ្ធភាពរបស់អ្នកជារៀងរាល់ថ្ងៃ។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -72,6 +84,9 @@ export default {
 
         vidTwoHeaderOne: "查看您的聯絡人列表 (電話簿)，並找出最少三個您之前認為不可能轉為客戶的人。",
         vidTwoHeaderTwo: "制定計劃如何轉化這些潛在客戶。 請於下面分享您計劃中三個關鍵步驟。",
+
+        vidThreeHeaderOne: "您可以將哪些系統應用到您的常規中？",
+        vidThreeHeaderTwo: "試想出三個務實、可應付且可以幫助您提高每天生產力和效率的方法。",
 
         placeholder: "在此輸入",
         submit: "提交",
