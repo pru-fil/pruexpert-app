@@ -5,7 +5,7 @@
       <hr/>
       <div class="d-flex justify-content-between">
 
-        <p style="font-weight: 500;font-size: 14px;" class="mb-0">{{ props.data.first_name.toUpperCase() }} {{ props.data.last_name.toUpperCase() }}</p>
+        <p style="font-weight: 500;font-size: 14px;" class="mb-0">{{ props.data.first_name.toUpperCase() }}</p>
         <span style="font-size: 14px;" class="text3">{{props.data.created_at}}</span>
       </div>
 
