@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Assessment from "../components/nextgen/Assessment.vue";
 import Comments from "../components/nextgen/Comments.vue";
-import i18n, { defaultLocale } from '../i18n'
+import i18n from '../i18n'
+import DigitalTrigger from "../components/DigitalTrigger.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,11 @@ const router = createRouter({
       path: '/comments',
       name: 'Comments',
       component: Comments
+    },
+    {
+      path: '/demo',
+      name: 'Demo',
+      component: DigitalTrigger
     }
   ]
 })
