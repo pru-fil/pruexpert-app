@@ -15,6 +15,9 @@ export default {
         vidThreeHeaderTwo: "Think of three that are realistic, manageable, and can help you improve your productivity " +
             "and efficiency each day.",
 
+        vidFourHeaderOne: "What are your top three interests?",
+        vidFourHeaderTwo: "Describe how you would connect with new prospects from each interest group.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -43,6 +46,9 @@ export default {
         vidThreeHeaderTwo: "Pikirkan tiga hal yang realistis, dapat dikelola, dan dapat membantu " +
             "Anda meningkatkan produktivitas dan efisiensi setiap hari.",
 
+        vidFourHeaderOne: "Apa tiga minat Anda yang teratas?",
+        vidFourHeaderTwo: "Jelaskan bagaimana Anda membangun koneksi dengan prospek baru dari setiap kelompok sosial.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -66,6 +72,9 @@ export default {
         vidThreeHeaderTwo: "គិតអោយបាន ៣ចំនុច ដែលអាចកើតឡើង, ដែលអាចគ្រប់គ្រងបាន, " +
             "និង អាចជួយអោយផលិតភាពរបស់អ្នកកាន់តែមានប្រសិទ្ធភាពពីមួយថ្ងៃទៅមួយថ្ងៃ",
 
+        vidFourHeaderOne: "តើអ្វីទៅជាចំណាប់អារម្មណ៍កំពូលទាំងបីរបស់អ្នក?",
+        vidFourHeaderTwo: "ចូរពិពណ៌នាអំពីរបៀបដែលអ្នកនឹងភ្ជាប់ទំនាក់ទំនងជាមួយអតិថិជនគោលដៅថ្មីៗពីក្រុមដែលមានចំណាប់អារម្មណ៍ដូចគ្នានីមួយៗ។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -87,6 +96,9 @@ export default {
 
         vidThreeHeaderOne: "您可以將哪些系統應用到您的常規中？",
         vidThreeHeaderTwo: "試想出三個務實、可應付且可以幫助您提高每天生產力和效率的方法。",
+
+        vidFourHeaderOne: "您的三大興趣是什麼？",
+        vidFourHeaderTwo: "請描述您將如何連繫每個興趣小組的新潛在客戶。",
 
         placeholder: "在此輸入",
         submit: "提交",
