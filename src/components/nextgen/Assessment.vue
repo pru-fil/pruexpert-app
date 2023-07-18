@@ -107,7 +107,7 @@ export default {
           moduleId: router.query.moduleId,
           type: router.query.type,
           comment: comment.value,
-          video: router.query.video
+          video: router.query.video ?? '1'
         }
       }).then((resp) => {
         let data = resp.data;
