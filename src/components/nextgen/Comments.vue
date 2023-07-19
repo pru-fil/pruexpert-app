@@ -47,7 +47,7 @@ const getComments = (page) => {
       // title: router.query.title,
       moduleId: moduleId,
       // moduleId: 2036359,
-      lbu: 'PAMB',
+      type: router.query.type,
     }
   }).then((resp) => {
     data.value = resp.data;
