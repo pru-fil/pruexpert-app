@@ -65,7 +65,7 @@
           @grid-ready="onGridReady"
       > </ag-grid-vue>
     </div>
-    </div>
+  </div>
 
 </template>
 
