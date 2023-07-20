@@ -144,7 +144,7 @@ export default {
       }
       axios({
         method: 'post',
-        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completePruexpert',
+        url: 'https://shark-app-pjbx4.ondigitalocean.app/api/completeDemo',
         // url: 'http://localhost:8001/api/completePruexpert',
         data: {
           username: router.query.username,
