@@ -18,6 +18,10 @@ export default {
         vidFourHeaderOne: "What are your top three interests?",
         vidFourHeaderTwo: "Describe how you would connect with new prospects from each interest group.",
 
+        vidFiveHeaderOne: "Let’s start with the end in mind.",
+        vidFiveHeaderTwo: "First, write down what you’d like to achieve in your career with Prudential.",
+        vidFiveHeaderThree: "Next, write down three areas you’d like to cultivate and improve on to help you get there.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -49,6 +53,10 @@ export default {
         vidFourHeaderOne: "Apa tiga minat Anda yang teratas?",
         vidFourHeaderTwo: "Jelaskan bagaimana Anda membangun koneksi dengan prospek baru dari setiap kelompok sosial.",
 
+        vidFiveHeaderOne: "Mari kita mulai dengan tujuan akhir.",
+        vidFiveHeaderTwo: "Pertama, tuliskan apa yang ingin Anda capai dalam karier Anda bersama Prudential.",
+        vidFiveHeaderThree: "Selanjutnya, tuliskan tiga area yang ingin Anda kembangkan dan tingkatkan untuk membantu Anda mencapainya.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -75,6 +83,10 @@ export default {
         vidFourHeaderOne: "តើអ្វីទៅជាចំណាប់អារម្មណ៍កំពូលទាំងបីរបស់អ្នក?",
         vidFourHeaderTwo: "ចូរពិពណ៌នាអំពីរបៀបដែលអ្នកនឹងភ្ជាប់ទំនាក់ទំនងជាមួយអតិថិជនគោលដៅថ្មីៗពីក្រុមដែលមានចំណាប់អារម្មណ៍ដូចគ្នានីមួយៗ។",
 
+        vidFiveHeaderOne: "ចូរចាប់ផ្តើមជាមួយនឹងការបញ្ចប់នៅក្នុងចិត្ត",
+        vidFiveHeaderTwo: "ជាដំបូង សរសេរអ្វីដែលអ្នកចង់សម្រេចបានក្នុងអាជីពរបស់អ្នកជាមួយក្រុមហ៊ុនព្រូដិនសល",
+        vidFiveHeaderThree: "បន្ទាប់មក សរសេរផ្នែកបីដែលអ្នកចង់បណ្តុះ និងកែលម្អ ដើម្បីជួយអ្នកទៅដល់ទីនោះ",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -99,6 +111,10 @@ export default {
 
         vidFourHeaderOne: "您的三大興趣是什麼？",
         vidFourHeaderTwo: "請描述您將如何連繫每個興趣小組的新潛在客戶。",
+
+        vidFiveHeaderOne: "由以始為終出發。",
+        vidFiveHeaderTwo: "首先，寫下您希望在保誠的事業發展中實現什麼目標。",
+        vidFiveHeaderThree: "接下來，寫下您想要培養和改進，並且能幫助您達成目標的三個範疇。",
 
         placeholder: "在此輸入",
         submit: "提交",

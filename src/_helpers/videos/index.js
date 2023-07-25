@@ -22,6 +22,13 @@ function setVideo(video) {
                     '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vidFourHeaderTwo') + '</p>'
             }
             break;
+        case '5':
+            msg = {
+                header: '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vidFiveHeaderOne') + '</p>' +
+                    '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vidFiveHeaderTwo') + '</p>' +
+                    '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vidFiveHeaderThree') + '</p>'
+            }
+            break;
         default:
             msg = {
                 header: '<p style="font-size: 22px; font-weight: 600;" >' + i18n.vueI18n.global.t('headerOne') + '</p>' +
