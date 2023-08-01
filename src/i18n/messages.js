@@ -22,6 +22,21 @@ export default {
         vidFiveHeaderTwo: "First, write down what you’d like to achieve in your career with Prudential.",
         vidFiveHeaderThree: "Next, write down three areas you’d like to cultivate and improve on to help you get there.",
 
+        vidSixHeaderOne: "Think about the social media platforms you have. ",
+        vidSixHeaderTwo: "List three types of posts you feel would be most important for building your brand online—and tell us why!",
+
+        vidSevenHeaderOne: "Prepare three questions you can ask your prospects that will guide them to the conclusion that insurance is important. " +
+            "Remember not to state this directly—but have your prospects arrive at the conclusion themselves.",
+        vidSevenHeaderTwo: "Type your three questions below.",
+
+        vidEightHeaderOne: "Share three tips with us on how you handle a “No” and turn them into a “Yes!”",
+
+        vidNineHeaderOne: "",
+        vidNineHeaderTwo: "",
+
+        vidTenHeaderOne: "",
+        vidTenHeaderTwo: "",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -57,6 +72,21 @@ export default {
         vidFiveHeaderTwo: "Pertama, tuliskan apa yang ingin Anda capai dalam karier Anda bersama Prudential.",
         vidFiveHeaderThree: "Selanjutnya, tuliskan tiga area yang ingin Anda kembangkan dan tingkatkan untuk membantu Anda mencapainya.",
 
+        vidSixHeaderOne: "Pikirkan tentang platform media sosial yang Anda miliki.",
+        vidSixHeaderTwo: "Cantumkan tiga jenis postingan yang menurut Anda paling penting untuk membangun reputasi Anda secara online—dan beri tahu kami alasannya!",
+
+        vidSevenHeaderOne: "Persiapkan tiga pertanyaan yang dapat Anda ajukan kepada prospek Anda yang akan memandu mereka sampai pada kesimpulan bahwa asuransi itu penting. " +
+            "Ingatlah untuk tidak menyatakannya secara langsung—namun biarkan prospek Anda sendiri yang membuat kesimpulan.",
+        vidSevenHeaderTwo: "Ketik tiga pertanyaan Anda di bawah ini.",
+
+        vidEightHeaderOne: 'vidEightHeaderOne: "Bagikan tiga tip dengan kami tentang bagaimana Anda menangani "Tidak" dan mengubahnya menjadi "Ya!"',
+
+        vidNineHeaderOne: "",
+        vidNineHeaderTwo: "",
+
+        vidTenHeaderOne: "",
+        vidTenHeaderTwo: "",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -87,6 +117,21 @@ export default {
         vidFiveHeaderTwo: "ជាដំបូង សរសេរអ្វីដែលអ្នកចង់សម្រេចបានក្នុងអាជីពរបស់អ្នកជាមួយក្រុមហ៊ុនព្រូដិនសល",
         vidFiveHeaderThree: "បន្ទាប់មក សរសេរផ្នែកបីដែលអ្នកចង់បណ្តុះ និងកែលម្អ ដើម្បីជួយអ្នកទៅដល់ទីនោះ",
 
+        vidSixHeaderOne: "គិតអំពីវេទិកាបណ្ដាញសង្គមដែលអ្នកមាន",
+        vidSixHeaderTwo: "រាយបញ្ជីការបង្ហោះចំនួនបីប្រភេទដែលអ្នកយល់ថាមានសារៈសំខាន់បំផុតសម្រាប់ការកសាងម៉ាកយីហោរបស់អ្នកតាមអ៊ីនធឺណិត ហើយប្រាប់យើងពីមូលហេតុ!",
+
+        vidSevenHeaderOne: "រៀបចំសំណួរចំនួនបីដែលអ្នកអាចសួរអតិថិជនគោលដៅរបស់អ្នកដែលនឹងណែនាំពួកគេឱ្យសន្និដ្ឋានថាការធានារ៉ាប់រងមានសារៈសំខាន់។ " +
+            "សូមចងចាំថាមិនត្រូវនិយាយរឿងនេះដោយផ្ទាល់ទេ ប៉ុន្តែសូមឱ្យអតិថិជនគោលដៅរបស់អ្នកធ្វើការសន្និដ្ឋានដោយខ្លួនឯង",
+        vidSevenHeaderTwo: "វាយសំណួរទាំងបីរបស់អ្នកខាងក្រោម",
+
+        vidEightHeaderOne: 'ចែករំលែកគន្លឹះបីយ៉ាងជាមួយយើងអំពីរបៀបដែលអ្នកដោះស្រាយការឆ្លើយថា "ទេ" ហើយប្រែក្លាយវាទៅជា "បាទ/ចាស!"',
+
+        vidNineHeaderOne: "",
+        vidNineHeaderTwo: "",
+
+        vidTenHeaderOne: "",
+        vidTenHeaderTwo: "",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -115,6 +160,20 @@ export default {
         vidFiveHeaderOne: "由以始為終出發。",
         vidFiveHeaderTwo: "首先，寫下您希望在保誠的事業發展中實現什麼目標。",
         vidFiveHeaderThree: "接下來，寫下您想要培養和改進，並且能幫助您達成目標的三個範疇。",
+
+        vidSixHeaderOne: "想想你擁有的社交媒體平台。",
+        vidSixHeaderTwo: "列出你認為對於在線上打造品牌最重要的三類帖子，並闡述其原因！",
+
+        vidSevenHeaderOne: "",
+        vidSevenHeaderTwo: "",
+
+        vidEightHeaderOne: "",
+
+        vidNineHeaderOne: "",
+        vidNineHeaderTwo: "",
+
+        vidTenHeaderOne: "",
+        vidTenHeaderTwo: "",
 
         placeholder: "在此輸入",
         submit: "提交",
