@@ -164,8 +164,8 @@ export default {
         vidSixHeaderOne: "想想你擁有的社交媒體平台。",
         vidSixHeaderTwo: "列出你認為對於在線上打造品牌最重要的三類帖子，並闡述其原因！",
 
-        vidSevenHeaderOne: "",
-        vidSevenHeaderTwo: "",
+        vidSevenHeaderOne: "準備三個可以引導潛在客戶總結出保險很重要的問題。 切記不要直接陳述，而是讓你的潛在客戶自行得出結論。",
+        vidSevenHeaderTwo: "在下面列出你的三個問題。",
 
         vidEightHeaderOne: "",
 
