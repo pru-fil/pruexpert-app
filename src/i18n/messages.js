@@ -167,7 +167,7 @@ export default {
         vidSevenHeaderOne: "準備三個可以引導潛在客戶總結出保險很重要的問題。 切記不要直接陳述，而是讓你的潛在客戶自行得出結論。",
         vidSevenHeaderTwo: "在下面列出你的三個問題。",
 
-        vidEightHeaderOne: "",
+        vidEightHeaderOne: "與我們分享三個技巧，如何將「不」轉成「是」！",
 
         vidNineHeaderOne: "",
         vidNineHeaderTwo: "",
