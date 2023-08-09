@@ -46,7 +46,7 @@ const getComments = (page) => {
       // password: password.value,
       // title: router.query.title,
       moduleId: moduleId,
-      // moduleId: 2036359,
+      video: router.query.video,
       type: router.query.type,
     }
   }).then((resp) => {
