@@ -79,7 +79,7 @@ export default {
             "Ingatlah untuk tidak menyatakannya secara langsung—namun biarkan prospek Anda sendiri yang membuat kesimpulan.",
         vidSevenHeaderTwo: "Ketik tiga pertanyaan Anda di bawah ini.",
 
-        vidEightHeaderOne: 'vidEightHeaderOne: "Bagikan tiga tip dengan kami tentang bagaimana Anda menangani "Tidak" dan mengubahnya menjadi "Ya!"',
+        vidEightHeaderOne: 'Bagikan tiga tip dengan kami tentang bagaimana Anda menangani "Tidak" dan mengubahnya menjadi "Ya!"',
 
         vidNineHeaderOne: "",
         vidNineHeaderTwo: "",
