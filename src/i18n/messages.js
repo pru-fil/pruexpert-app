@@ -31,11 +31,11 @@ export default {
 
         vidEightHeaderOne: "Share three tips with us on how you handle a “No” and turn them into a “Yes!”",
 
-        vidNineHeaderOne: "",
-        vidNineHeaderTwo: "",
+        vidNineHeaderOne: "After closing a sale, what can you do for your customers that is uniquely you—part of your signature service?",
+        vidNineHeaderTwo: "Type a checklist of three things below, and make sure to follow it after your next sale!",
 
-        vidTenHeaderOne: "",
-        vidTenHeaderTwo: "",
+        vidTenHeaderOne: "Where do your knowledge or skill gaps fall?",
+        vidTenHeaderTwo: "List three areas you need improvement around and tell us what steps you plan to take for each to help you close those gaps.",
 
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
@@ -126,11 +126,11 @@ export default {
 
         vidEightHeaderOne: 'ចែករំលែកគន្លឹះបីយ៉ាងជាមួយយើងអំពីរបៀបដែលអ្នកដោះស្រាយការឆ្លើយថា "ទេ" ហើយប្រែក្លាយវាទៅជា "បាទ/ចាស!"',
 
-        vidNineHeaderOne: "",
-        vidNineHeaderTwo: "",
+        vidNineHeaderOne: "បន្ទាប់ពីសម្រេចការលក់ តើអ្នកអាចធ្វើអ្វីខ្លះសម្រាប់អតិថិជនរបស់អ្នក ដែលជាផ្នែកមួយនៃសេវាកម្មប្លែករបស់អ្នក?",
+        vidNineHeaderTwo: "សរសេរបញ្ជីត្រួតពិនិត្យនៃរបស់៣យ៉ាងខាងក្រោម ហើយត្រូវប្រាកដថាអ្នកធ្វើតាមវាបន្ទាប់ពីការលក់សរបស់អ្នក!",
 
-        vidTenHeaderOne: "",
-        vidTenHeaderTwo: "",
+        vidTenHeaderOne: "តើគម្លាតចំណេះដឹង ឬជំនាញរបស់អ្នកធ្លាក់ទៅណា?",
+        vidTenHeaderTwo: "សរសេរផ្នែកចំនួនបីដែលអ្នកត្រូវការកែលម្អ ហើយប្រាប់អំពីជំហានដែលអ្នកគ្រោងនឹងធ្វើសម្រាប់ផ្នែកនីមួយៗ ដើម្បីជួយអ្នកក្នុងការបិទគម្លាតទាំងនោះ។",
 
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
@@ -169,11 +169,11 @@ export default {
 
         vidEightHeaderOne: "與我們分享三個技巧，如何將「不」轉成「是」！",
 
-        vidNineHeaderOne: "",
-        vidNineHeaderTwo: "",
+        vidNineHeaderOne: "成交後，有什麼是只有你可以為客戶提供的標誌性服務？",
+        vidNineHeaderTwo: "輸入包含以下三項的清單，並確保在下次成交後便會實行！",
 
-        vidTenHeaderOne: "",
-        vidTenHeaderTwo: "",
+        vidTenHeaderOne: "你的知識或技巧有什麼差距？",
+        vidTenHeaderTwo: "列出你需要改進的三個範疇，並針對每個範疇，告訴我們你會採取哪些步驟來縮小這些差距。",
 
         placeholder: "在此輸入",
         submit: "提交",
