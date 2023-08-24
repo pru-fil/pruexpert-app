@@ -81,11 +81,12 @@ export default {
 
         vidEightHeaderOne: 'Bagikan tiga tip dengan kami tentang bagaimana Anda menangani "Tidak" dan mengubahnya menjadi "Ya!"',
 
-        vidNineHeaderOne: "",
-        vidNineHeaderTwo: "",
+        vidNineHeaderOne: "Setelah menutup penjualan, apa yang dapat Anda lakukan untuk klien Anda yang unik—bagian dari layanan khas Anda?",
+        vidNineHeaderTwo: "Ketik daftar tiga hal di bawah ini, dan pastikan untuk mengikuti cara di atas setelah penjualan berikutnya!",
 
-        vidTenHeaderOne: "",
-        vidTenHeaderTwo: "",
+        vidTenHeaderOne: "Di manakah letak kesenjangan pengetahuan atau keterampilan Anda?",
+        vidTenHeaderTwo: "Buat daftar tiga area yang perlu Anda tingkatkan dan beri tahu kami langkah apa " +
+            "yang Anda rencanakan untuk masing-masing area tersebut untuk membantu Anda menutup celah tersebut.",
 
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
