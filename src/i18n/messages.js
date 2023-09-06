@@ -37,6 +37,13 @@ export default {
         vidTenHeaderOne: "Where do your knowledge or skill gaps fall?",
         vidTenHeaderTwo: "List three areas you need improvement around and tell us what steps you plan to take for each to help you close those gaps.",
 
+        vid11HeaderOne: "Make a list of four questions you can ask to get to know your prospect as an individual. " +
+            "For example, you can ask them about their family, occupation, recreational activities, and motivations in life.",
+        vid11HeaderTwo: "Type the questions in the box below.",
+
+        vid12HeaderOne: "What is your go-to productivity tool?",
+        vid12HeaderTwo: "Name at least two in the box below and share why you find them suitable for you.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -88,6 +95,13 @@ export default {
         vidTenHeaderTwo: "Buat daftar tiga area yang perlu Anda tingkatkan dan beri tahu kami langkah apa " +
             "yang Anda rencanakan untuk masing-masing area tersebut untuk membantu Anda menutup celah tersebut.",
 
+        vid11HeaderOne: "Buatlah daftar empat pertanyaan yang dapat Anda ajukan untuk mengenal prospek " +
+            "Anda sebagai individu. Misalnya, Anda bisa bertanya kepada mereka tentang keluarga, pekerjaan, aktivitas rekreasi, dan motivasi hidup.",
+        vid11HeaderTwo: "Ketik pertanyaan pada kotak di bawah ini.",
+
+        vid12HeaderOne: "Apa alat produktivitas andalan Anda?",
+        vid12HeaderTwo: "Sebutkan setidaknya dua di kotak di bawah ini dan sampaikan mengapa menurut Anda keduanya cocok untuk Anda.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -133,6 +147,12 @@ export default {
         vidTenHeaderOne: "តើគម្លាតចំណេះដឹង ឬជំនាញរបស់អ្នកធ្លាក់ទៅណា?",
         vidTenHeaderTwo: "សរសេរផ្នែកចំនួនបីដែលអ្នកត្រូវការកែលម្អ ហើយប្រាប់អំពីជំហានដែលអ្នកគ្រោងនឹងធ្វើសម្រាប់ផ្នែកនីមួយៗ ដើម្បីជួយអ្នកក្នុងការបិទគម្លាតទាំងនោះ។",
 
+        vid11HeaderOne: "សរសេរសំណួរចំនួន៤ដែលអ្នកអាចសួរ ដើម្បីស្គាល់អតិថិជនរបស់អ្នកជាបុគ្គលម្នាក់។ ឧទាហរណ៍ អ្នកអាចសួរពួកគេអំពីគ្រួសារ មុខរបរ សកម្មភាពកម្សាន្ត និងការលើកទឹកចិត្តក្នុងជីវិតរបស់ពួកគេ។",
+        vid11HeaderTwo: "វាយសំណួរក្នុងប្រអប់ខាងក្រោម។",
+
+        vid12HeaderOne: "តើអ្វីទៅជាឧបករណ៍ផលិតភាពរបស់អ្នក?",
+        vid12HeaderTwo: "ដាក់ឈ្មោះឧបករណ៍យ៉ាងហោចណាស់ឲ្យបាន២ នៅក្នុងប្រអប់ខាងក្រោម ហើយចែករំលែកមូលហេតុដែលអ្នកយល់ថាវាសាកសមសម្រាប់អ្នក។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -175,6 +195,12 @@ export default {
 
         vidTenHeaderOne: "你的知識或技巧有什麼差距？",
         vidTenHeaderTwo: "列出你需要改進的三個範疇，並針對每個範疇，告訴我們你會採取哪些步驟來縮小這些差距。",
+
+        vid11HeaderOne: "列出四個你會用來了解潛在客戶的問題。 例如，你用來詢問有關他們的家庭、職業、娛樂活動和生活喜好。",
+        vid11HeaderTwo: "在下面的框中輸入問題。",
+
+        vid12HeaderOne: "你首選管理生產力的工具是什麼？",
+        vid12HeaderTwo: "在下面的框中列出並分享至少兩個你認為它們適合你的原因。",
 
         placeholder: "在此輸入",
         submit: "提交",
