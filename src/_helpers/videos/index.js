@@ -70,6 +70,18 @@ function setVideo(video) {
                     '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vid12HeaderTwo') + '</p>'
             }
             break;
+        case '13':
+            msg = {
+                header: '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vid13HeaderOne') + '</p>' +
+                    '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vid13HeaderTwo') + '</p>'
+            }
+            break;
+        case '14':
+            msg = {
+                header: '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vid14HeaderOne') + '</p>' +
+                    '<p style="font-size: 16px;">' + i18n.vueI18n.global.t('vid14HeaderTwo') + '</p>'
+            }
+            break;
         default:
             msg = {
                 header: '<p style="font-size: 22px; font-weight: 600;" >' + i18n.vueI18n.global.t('headerOne') + '</p>' +

@@ -44,6 +44,13 @@ export default {
         vid12HeaderOne: "What is your go-to productivity tool?",
         vid12HeaderTwo: "Name at least two in the box below and share why you find them suitable for you.",
 
+        vid13HeaderOne: "How do you decide whom to ask for help?",
+        vid13HeaderTwo: "In the box below, tell us the top three people you’d go " +
+            "to for advice and explain why you chose them as your sounding board.",
+
+        vid14HeaderOne: "Which of the five strategies resonate most with you?",
+        vid14HeaderTwo: "Write them down and share with us the reason why.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -102,6 +109,13 @@ export default {
         vid12HeaderOne: "Apa alat produktivitas andalan Anda?",
         vid12HeaderTwo: "Sebutkan setidaknya dua di kotak di bawah ini dan sampaikan mengapa menurut Anda keduanya cocok untuk Anda.",
 
+        vid13HeaderOne: "Bagaimana Anda memutuskan siapa yang akan dimintai bantuan?",
+        vid13HeaderTwo: "Pada kotak di bawah, beri tahu kami tiga orang teratas yang akan Anda temui untuk " +
+            "meminta nasihat dan jelaskan mengapa Anda memilih mereka sebagai saran Anda.",
+
+        vid14HeaderOne: "Manakah dari lima strategi yang paling sesuai dengan Anda?",
+        vid14HeaderTwo: "Tuliskan dan bagikan alasannya kepada kami.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -153,6 +167,12 @@ export default {
         vid12HeaderOne: "តើអ្វីទៅជាឧបករណ៍ផលិតភាពរបស់អ្នក?",
         vid12HeaderTwo: "ដាក់ឈ្មោះឧបករណ៍យ៉ាងហោចណាស់ឲ្យបាន២ នៅក្នុងប្រអប់ខាងក្រោម ហើយចែករំលែកមូលហេតុដែលអ្នកយល់ថាវាសាកសមសម្រាប់អ្នក។",
 
+        vid13HeaderOne: "តើអ្នកសម្រេចចិត្តដោយរបៀបណាដើម្បីសុំជំនួយ?",
+        vid13HeaderTwo: "នៅក្នុងប្រអប់ខាងក្រោម សូមប្រាប់ពីមនុស្សកំពូលបីនាក់ដែលអ្នកចង់ទៅសុំដំបូន្មាន និងពន្យល់ពីមូលហេតុដែលអ្នកជ្រើសរើសពួកគេធ្វើជាអ្នកប្រឹក្សារបស់អ្នក។",
+
+        vid14HeaderOne: "តើយុទ្ធសាស្ត្រមួយណាក្នុងចំណោមទាំងប្រាំដែលទាក់ទាញអ្នកខ្លាំងជាងគេ?",
+        vid14HeaderTwo: "សរសេរហើយចែករំលែកអំពីមូលហេតុ។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -201,6 +221,12 @@ export default {
 
         vid12HeaderOne: "你首選管理生產力的工具是什麼？",
         vid12HeaderTwo: "在下面的框中列出並分享至少兩個你認為它們適合你的原因。",
+
+        vid13HeaderOne: "你怎樣決定向誰尋求協助？",
+        vid13HeaderTwo: "在下面的方框中，請告訴我們你最想尋求建議的三個人，並解釋為什麼你選擇他們作為你的參謀。",
+
+        vid14HeaderOne: "這五種策略中哪一種最能引起你的共鳴？",
+        vid14HeaderTwo: "把它們寫下來並與我們分享原因。",
 
         placeholder: "在此輸入",
         submit: "提交",
