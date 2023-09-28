@@ -51,6 +51,16 @@ export default {
         vid14HeaderOne: "Which of the five strategies resonate most with you?",
         vid14HeaderTwo: "Write them down and share with us the reason why.",
 
+        vid15HeaderOne: "Overcome the challenges to your own learning.",
+        vid15HeaderTwo: "List down three areas that you wish to improve on. " +
+            "For instance, do you need more work around understanding needs, handling objections, or using PRULeads?",
+        vid15HeaderThree: "Afterwards, search for these topics in your PRUExpert Content Library or " +
+            "speak to a peer or leader to close those knowledge gaps.",
+
+        vid16HeaderOne: "Think of a time when you helped your prospect focus on how a " +
+            "solution is protecting them (needs), instead of how much it costs (premiums).",
+        vid16HeaderTwo: "Share how you managed to do this.",
+
         placeholder: "TYPE HERE",
         submit: "SUBMIT",
         success: 'Thank you for your response. Please click "Next" button above to view comments.',
@@ -116,6 +126,16 @@ export default {
         vid14HeaderOne: "Manakah dari lima strategi yang paling sesuai dengan Anda?",
         vid14HeaderTwo: "Tuliskan dan bagikan alasannya kepada kami.",
 
+        vid15HeaderOne: "Atasi tantangan terhadap pembelajaran Anda sendiri.",
+        vid15HeaderTwo: "Tuliskan tiga bidang yang ingin Anda tingkatkan. " +
+            "Misalnya, apakah Anda memerlukan lebih banyak upaya untuk memahami kebutuhan, menangani keberatan, atau menggunakan PRULeads?",
+        vid15HeaderThree: "Setelah itu, cari topik-topik ini di Pustaka Konten PRUExpert Anda atau bicaralah dengan " +
+            "rekan atau pemimpin untuk menutup kesenjangan pengetahuan tersebut.",
+
+        vid16HeaderOne: "Bayangkan saat Anda membantu calon klien fokus pada bagaimana " +
+            "suatu solusi melindungi mereka (kebutuhan), bukan pada berapa biayanya (premi).",
+        vid16HeaderTwo: "Bagikan bagaimana Anda berhasil melakukan ini.",
+
         placeholder: "TULIS DI SINI",
         submit: "Kumpulkan",
         success: 'Terima kasih atas jawaban Anda. Silakan klik tombol "Next" di atas untuk melihat komentar.',
@@ -173,6 +193,14 @@ export default {
         vid14HeaderOne: "តើយុទ្ធសាស្ត្រមួយណាក្នុងចំណោមទាំងប្រាំដែលទាក់ទាញអ្នកខ្លាំងជាងគេ?",
         vid14HeaderTwo: "សរសេរហើយចែករំលែកអំពីមូលហេតុ។",
 
+        vid15HeaderOne: "ជំនះឧបសគ្គចំពោះការសិក្សាផ្ទាល់ខ្លួនរបស់អ្នក។",
+        vid15HeaderTwo: "សរសេរផ្នែកបីដែលអ្នកចង់កែលម្អ។ ឧទាហរណ៍ តើអ្នកត្រូវការស្វែងយល់បន្ថែមទៀតជុំវិញតម្រូវការការយល់ដឹង " +
+            "ការដោះស្រាយការជំទាស់ ឬការប្រើប្រាស់ PRULeads ដែរឬទេ?",
+        vid15HeaderThree: "បន្ទាប់មក ស្វែងរកប្រធានបទទាំងនេះនៅក្នុង PRUExpert របស់អ្នក ឬនិយាយទៅកាន់មិត្តភ័ក្តិ ឬអ្នកដឹកនាំ ដើម្បីបិទគម្លាតចំណេះដឹងទាំងនោះ។",
+
+        vid16HeaderOne: "ចូរគិតអំពីពេលមួយដែលអ្នកបានជួយអតិថិជនគោលដៅរបស់អ្នកផ្តោតលើរបៀបដែលដំណោះស្រាយមួយកំពុងការពារពួកគេ (តម្រូវការ) ជំនួសឱ្យតម្លៃរបស់វា (បុព្វលាភ) ។",
+        vid16HeaderTwo: "ចូរចែករំលែកពីរបៀបដែលអ្នកអាចធ្វើវាបាន។",
+
         placeholder: "វាយបញ្ចូលនៅទីនេះ",
         submit: "ដាក់ស្នើ",
         success: 'សូមអរគុណចំពោះការឆ្លើយតបរបស់អ្នក។ សូមចុចប៊ូតុង "Next" ខាងលើដើម្បីមើលមតិ។',
@@ -227,6 +255,13 @@ export default {
 
         vid14HeaderOne: "這五種策略中哪一種最能引起你的共鳴？",
         vid14HeaderTwo: "把它們寫下來並與我們分享原因。",
+
+        vid15HeaderOne: "",
+        vid15HeaderTwo: "",
+        vid15HeaderThree: "",
+
+        vid16HeaderOne: "",
+        vid16HeaderTwo: "",
 
         placeholder: "在此輸入",
         submit: "提交",
