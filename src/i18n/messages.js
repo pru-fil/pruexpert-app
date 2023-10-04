@@ -256,12 +256,12 @@ export default {
         vid14HeaderOne: "這五種策略中哪一種最能引起你的共鳴？",
         vid14HeaderTwo: "把它們寫下來並與我們分享原因。",
 
-        vid15HeaderOne: "",
-        vid15HeaderTwo: "",
-        vid15HeaderThree: "",
+        vid15HeaderOne: "克服自我學習的挑戰。",
+        vid15HeaderTwo: "列出您希望改進的三個方面。 例如，您是否需要改善在理解需求、處理異議或使用 PRULeads 方面的能力？",
+        vid15HeaderThree: "然後，在 PRUExpert 內容庫中搜尋這些主題或與同行或領導者討論以縮小這些知識差距。",
 
-        vid16HeaderOne: "",
-        vid16HeaderTwo: "",
+        vid16HeaderOne: "回想一下，您曾經幫助潛在客戶集中於方案的保障（需求），而不是成本（保費）。",
+        vid16HeaderTwo: "分享您是如何做到。",
 
         placeholder: "在此輸入",
         submit: "提交",
